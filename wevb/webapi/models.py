@@ -15,6 +15,10 @@ class User(db.Model):
     def __repr__(self):
         return f"This is the user {self.username}, email address is {self.email}, his password is {self.password}"
 
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
+
 
 class NormalPhoto(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -25,6 +29,10 @@ class NormalPhoto(db.Model):
 
     def __repr__(self):
         return f" This is the photo {self.photo_name}, photo date is {self.photo_date} and the user is {self.owner}"
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
 
 
 class SmilingPhoto(db.Model):
@@ -37,6 +45,10 @@ class SmilingPhoto(db.Model):
     def __repr__(self):
         return f" This is the smiling photo {self.photo_name}, photo date is {self.photo_date}"
 
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
+
 
 class TypingTest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -47,6 +59,10 @@ class TypingTest(db.Model):
     def __repr__(self):
         return f"This the typing test from {self.owner}. It has {self.mistakes} out of {self.total_letters}"
 
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
+
 
 class RecordingTest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -56,3 +72,7 @@ class RecordingTest(db.Model):
 
     def __repr__(self):
         return f"This is the Recording Test from {self.owner}. Recording name is {self.recording_name} and the id is {self.id_text}"
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()

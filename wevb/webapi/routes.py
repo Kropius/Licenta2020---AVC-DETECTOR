@@ -5,15 +5,57 @@ from webapi.models import User, NormalPhoto, SmilingPhoto
 from sqlalchemy import exc
 from webapi.functionalities import save_photo
 from webapi.detection.preprocessing import PreprocessData
+from flask_login import current_user, login_user
+from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity, create_refresh_token, \
+    jwt_refresh_token_required
 import secrets, random
 
 
+def authenticate(username, password):
+    user = User.find_by_username(username)
+    if user and bcrypt.check_password_hash(user.password, password):
+        return user
+
+
+def identity(payload):
+    username = payload['identity']
+    return User.find_by_id(username)
+
+
+@app.route('/get_auth_token', methods=['POST'])
+@jwt_refresh_token_required
+def get_new_authorization_token():
+    if request.methods == 'POST':
+        current_user = get_jwt_identity()
+        ret = {
+            'access_token': create_access_token(identity=current_user)
+        }
+    return jsonify(ret), 200
+
+
 @app.route('/get_text', methods=['GET'])
+@jwt_required
 def get_voices():
     if request.method == "GET":
         texts = conn.cursor().execute("select * from texts").fetchall()
         id, text = random.choice(texts)
+        x = User.query.filter_by(username=get_jwt_identity()).first()
+        print(x)
     return jsonify({"id": id, "text": text})
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        user = User.query.filter_by(username=request.form['username']).first()
+        if user and bcrypt.check_password_hash(user.password, request.form['password']):
+            ret = {
+                'access_token': create_access_token(identity=user.username),
+                'refresh_token': create_refresh_token(identity=user.username)
+            }
+            return jsonify(ret), 200
+        else:
+            return jsonify({"success": "Incorrect data!"})
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -30,10 +72,10 @@ def register():
         typed_text = request.form['typed_text']
         typed_text_id = request.form['typed_text_id']
 
-        data = preprocessator.check_similarity(typed_text_id,typed_text)
-        print(f"I have received {username} {password} {email}")
+        data = preprocessator.check_similarity(typed_text_id, typed_text)
         hashed_passwd = bcrypt.generate_password_hash(password)
         user = User(username=username, password=hashed_passwd.decode('utf-8'), email=email)
+        user.save_to_db()
         try:
             db.session.add(user)
             db.session.commit()
@@ -51,16 +93,10 @@ def register():
             recording_path = save_photo('static/normal_recordings', recording.filename)
             recording.save(recording_path)
             # type_test = TypingTest(total_letters = )
-            normal_photo = NormalPhoto(photo_name=normal_path, photo_size=0, user_id=user.id)
-            smiling_photo = SmilingPhoto(photo_name=smiling_path, photo_size=0, user_id=user.id)
-            recording_test = RecordingTest(recording_name=recording_path, id_text=recording_id_text,
-                                           user_id=user.id)
-            typing_test =TypingTest(total_letters = data[1],mistakes = data[0],user_id  = user.id)
-            db.session.add(normal_photo)
-            db.session.add(smiling_photo)
-            db.session.add(recording_test)
-            db.session.add(typing_test)
+            NormalPhoto(photo_name=normal_path, photo_size=0, user_id=user.id).save_to_db()
+            SmilingPhoto(photo_name=smiling_path, photo_size=0, user_id=user.id).save_to_db()
+            RecordingTest(recording_name=recording_path, id_text=recording_id_text,
+                          user_id=user.id).save_to_db()
+            TypingTest(total_letters=data[1], mistakes=data[0], user_id=user.id).save_to_db()
 
-            db.session.commit()
-
-    return jsonify({"success": "success"})
+    return jsonify({"success": "You have successfully registered!"})
