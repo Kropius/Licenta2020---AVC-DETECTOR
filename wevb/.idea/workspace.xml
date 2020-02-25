@@ -3,11 +3,36 @@
   <component name="ChangeListManager">
     <list default="true" id="6fb62000-da61-4e8c-8fb1-524403c22849" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/2029240f6d1128be89ddc32729463129" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_session/a7817e1f7bc069be096733f20d1a4e74" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapi/detection/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/detection/preprocessing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapi/functionalities.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/functionalities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapi/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/security.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/webapi/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/site.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/1b6882c38d78a1a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/1b8ff0c6e4da4d23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/47f2b6613c833fb9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/4ee66e95dc7b9318.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/d4fc976da4960188.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/ed8a9805cee1868c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/f0fda75298c6c49a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/2c6edef07f486ad5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/56dcb1e6162be613.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/e5e44846e4ffee62.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/e76fe1466164d058.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/f3a8ab1e741fc450.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/f7d172d93695ea2e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/f81cdc403a7c8772.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/normal_recordings/1a6989a912934cd5.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/normal_recordings/21c64d187349b28f.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/normal_recordings/806a9878a3fd1029.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/normal_recordings/86adc0351f422e3b.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/normal_recordings/9bdf6456c0085973.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/normal_recordings/b94b34931c804170.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/normal_recordings/cfea787848410a2f.wav" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,15 +52,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/close-up-portrait-of-mature-woman-with-wide-smile-X9C34C.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapi/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            <state relative-caret-position="-1025">
+              <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -46,8 +66,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapi/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
+            <state relative-caret-position="3438">
+              <caret line="208" column="8" selection-start-line="208" selection-start-column="8" selection-end-line="208" selection-end-column="8" />
               <folding>
                 <element signature="e#0#84#0" expanded="true" />
               </folding>
@@ -56,24 +76,17 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/flask/globals.py">
+        <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropius.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="369">
+              <caret line="142" column="19" lean-forward="true" selection-start-line="142" selection-start-column="3" selection-end-line="142" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/detection/preprocessing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/webapi/detection/take_decision.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -88,27 +101,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapi/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+            <state relative-caret-position="100">
+              <caret line="4" column="49" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/security.py">
+        <entry file="file://$PROJECT_DIR$/webapi/functionalities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="13" />
+            <state relative-caret-position="244">
+              <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
               <folding>
-                <element signature="e#0#4#0" expanded="true" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/site.db">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/flask/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="394" column="13" selection-start-line="394" selection-start-column="13" selection-end-line="394" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapi/detection/preprocessing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="153" column="62" lean-forward="true" selection-start-line="153" selection-start-column="62" selection-end-line="153" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+                <marker date="1582660681970" expanded="true" signature="7059:7078" ph="..." />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -138,11 +168,13 @@
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/webapi/detection.py" />
         <option value="$PROJECT_DIR$/webapi/security.py" />
+        <option value="$PROJECT_DIR$/webapi/__init__.py" />
+        <option value="$PROJECT_DIR$/webapi/json_files/IrinaCercel122433.json" />
+        <option value="$PROJECT_DIR$/webapi/config.py" />
+        <option value="$PROJECT_DIR$/webapi/json_files/Kropius.json" />
         <option value="$PROJECT_DIR$/webapi/models.py" />
         <option value="$PROJECT_DIR$/webapi/functionalities.py" />
-        <option value="$PROJECT_DIR$/webapi/config.py" />
         <option value="$PROJECT_DIR$/webapi/detection/preprocessing.py" />
-        <option value="$PROJECT_DIR$/webapi/__init__.py" />
         <option value="$PROJECT_DIR$/webapi/routes.py" />
       </list>
     </option>
@@ -170,6 +202,24 @@
               <item name="wevb" type="462c0819:PsiDirectoryNode" />
               <item name="webapi" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="wevb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wevb" type="462c0819:PsiDirectoryNode" />
+              <item name="webapi" type="462c0819:PsiDirectoryNode" />
+              <item name="detection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wevb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wevb" type="462c0819:PsiDirectoryNode" />
+              <item name="webapi" type="462c0819:PsiDirectoryNode" />
+              <item name="json_files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wevb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wevb" type="462c0819:PsiDirectoryNode" />
+              <item name="webapi" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -180,7 +230,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/webapi/static/detection_files" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/webapi/detection" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -191,6 +241,7 @@
       <recent name="E:\info\LICENTA2020\wevb" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\info\LICENTA2020\wevb\webapi\detection" />
       <recent name="E:\info\LICENTA2020\wevb\webapi\static\detection_files" />
       <recent name="E:\info\LICENTA2020\wevb\webapi" />
     </key>
@@ -282,12 +333,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1406744" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1406744" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30444205" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30444205" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -351,26 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/functionalities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/security.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#4#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/flask/globals.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
@@ -378,10 +409,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/config.py">
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/close-up-portrait-of-mature-woman-with-wide-smile-X9C34C.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/site.db">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/security.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        <state relative-caret-position="250">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/IrinaCercel122433.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="919">
+          <caret line="95" column="12" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -392,16 +436,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/close-up-portrait-of-mature-woman-with-wide-smile-X9C34C.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/detection/preprocessing.py">
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="205">
+          <caret line="394" column="13" selection-start-line="394" selection-start-column="13" selection-end-line="394" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -412,23 +450,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/site.db">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/webapi/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="49" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapi/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        <state relative-caret-position="-1025">
+          <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/detection/take_decision.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropius.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="142" column="19" lean-forward="true" selection-start-line="142" selection-start-column="3" selection-end-line="142" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/detection/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="153" column="62" lean-forward="true" selection-start-line="153" selection-start-column="62" selection-end-line="153" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1582660681970" expanded="true" signature="7059:7078" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/functionalities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webapi/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
+        <state relative-caret-position="3438">
+          <caret line="208" column="8" selection-start-line="208" selection-start-column="8" selection-end-line="208" selection-end-column="8" />
           <folding>
             <element signature="e#0#84#0" expanded="true" />
           </folding>

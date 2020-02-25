@@ -7,10 +7,10 @@ class User(db.Model):
     username = db.Column(db.String(60), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(60), nullable=False)
-    normal_photo = db.relationship('NormalPhoto', backref='owner', )
-    smiling_photo = db.relationship('SmilingPhoto', backref='owner', )
-    typing_test = db.relationship('TypingTest', backref='owner', )
-    recording = db.relationship('RecordingTest', backref='owner', )
+    normal_photo = db.relationship('NormalPhoto',uselist=False, backref='owner', )
+    smiling_photo = db.relationship('SmilingPhoto', uselist=False,backref='owner', )
+    typing_test = db.relationship('TypingTest',uselist=False, backref='owner', )
+    recording = db.relationship('RecordingTest',uselist=False, backref='owner', )
 
     def __repr__(self):
         return f"This is the user {self.username}, email address is {self.email}, his password is {self.password}"

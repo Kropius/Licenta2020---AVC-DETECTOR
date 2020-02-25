@@ -7,6 +7,7 @@ import argparse
 import imutils
 import dlib
 import cv2
+import json
 
 
 class PreprocessData:
@@ -49,6 +50,7 @@ class PreprocessData:
         predictor = dlib.shape_predictor("webapi/static/detection_files/shape_predictor_68_face_landmarks.dat")
 
         # load the input image, resize it, and convert it to grayscale
+        print(image_path)
         image = cv2.imread(image_path)
         image = imutils.resize(image, width=500)
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -142,3 +144,37 @@ class PreprocessData:
         # mean_right, variance_right = get_mean_variance(right_side)
         # print(left_side, right_side)
         return left_side, right_side
+
+    def build_data_for_decision_from_json(self, user):
+        return self.build_data_for_decision(self.parse_json_data(user))
+
+    def build_data_for_decision(self, normal_photo, smiling_photo, mistakes, total_letters, speech_test):
+        parsed_data = dict()
+
+        parsed_data['left_mouth'] = normal_photo['left_mouth']
+        parsed_data['right_mouth'] = normal_photo['right_mouth']
+        parsed_data['left_eye'] = normal_photo['left_eye']
+        parsed_data['right_eye'] = normal_photo['right_eye']
+        parsed_data['left_mouth_corner'] = normal_photo['left_mouth_corner']
+        parsed_data['right_mouth_corner'] = normal_photo['right_mouth_corner']
+        parsed_data['texting_test'] = (mistakes, total_letters)
+        parsed_data['speech_test'] = speech_test
+        parsed_data['smiley_corners'] = (
+            smiling_photo['left_mouth_corner_smiling'],
+            smiling_photo['right_mouth_corner_smiling'])
+        parsed_data['upper_point'] = normal_photo['upper_most_point']
+        parsed_data['lower_point'] = normal_photo['lower_most_point']
+        parsed_data['upper_point_smiling'] = smiling_photo["upper_most_point_smiling"]
+        parsed_data['lower_point_smiling'] = smiling_photo["lower_most_point_smiling"]
+        print(parsed_data)
+        return parsed_data
+
+    def parse_json_data(self, user):
+        with open("webapi/json_files/" + user + ".json", "r") as my_json:
+            json_data = json.load(my_json)
+        normal_photo = json_data["normal_photo"]
+        smiling_photo = json_data["smiling_photo"]
+        mistakes = json_data['mistakes']
+        total_letters = json_data['total_letters']
+        speech_test = json_data['speech_text']
+        return normal_photo, smiling_photo, mistakes, total_letters, speech_test

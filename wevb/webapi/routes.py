@@ -2,8 +2,10 @@ from webapi.models import User, NormalPhoto, SmilingPhoto, TypingTest, Recording
 from webapi import app, bcrypt, db, conn
 from flask import request, jsonify
 from sqlalchemy import exc
-from webapi.functionalities import save_photo
+from webapi.functionalities import save_photo, create_json_file, write_data
 from webapi.detection.preprocessing import PreprocessData
+from webapi.detection.take_decision import builder
+from webapi.functionalities import calculate_user_data
 from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity, create_refresh_token, \
     jwt_refresh_token_required
 import random, os, json
@@ -74,11 +76,11 @@ def register():
                 error = "Username already exists!"
             return jsonify({"success": str(error)})
         else:
-            normal_path = save_photo('static/base_normal_photos', image.filename)
+            normal_path = save_photo('webapi/static/base_normal_photos', image.filename)
             image.save(normal_path)
-            smiling_path = save_photo('static/base_smiling_photos', smiling_image.filename)
+            smiling_path = save_photo('webapi/static/base_smiling_photos', smiling_image.filename)
             smiling_image.save(smiling_path)
-            recording_path = save_photo('static/normal_recordings', recording.filename)
+            recording_path = save_photo('webapi/static/normal_recordings', recording.filename)
             recording.save(recording_path)
             # type_test = TypingTest(total_letters = )
             NormalPhoto(photo_name=normal_path, photo_size=0, user_id=user.id).save_to_db()
@@ -98,12 +100,15 @@ def check_symmetry_normal_photo():
     """
     if request.method == 'POST':
         preprocess = PreprocessData()
-        # print(request.files)
         f = request.files['image']
         filename = f.filename
-        f.save(os.path.join("webapi/UPLOAD_FOLDER_PHOTOS", filename))
+        f.save(os.path.join(app.config['UPLOAD_FOLDER_PHOTOS'], filename))
         x = User.query.filter_by(username=get_jwt_identity()).first()
-    return jsonify("success")
+        create_json_file(x.username)
+        write_data("normal_photo",
+                   preprocess.return_face_parts(os.path.join(app.config['UPLOAD_FOLDER_PHOTOS'], filename)), x.username)
+        return jsonify("Photo successfully parsed")
+    return "Request unauthorized"
 
 
 @app.route('/get_smiley_corners', methods=['GET', 'POST'])
@@ -117,9 +122,13 @@ def get_smiley_corners():
         preprocess = PreprocessData()
         f = request.files['image']
         filename = f.filename
-        f.save(os.path.join(app.config['UPLOAD_FOLDER_PHOTOS'], filename))
-
-    return jsonify(preprocess.return_smile_corners(os.path.join(app.config['UPLOAD_FOLDER_PHOTOS'], filename)))
+        f.save(os.path.join("webapi/UPLOAD_FOLDER_PHOTOS", filename))
+        x = User.query.filter_by(username=get_jwt_identity()).first()
+        write_data("smiling_photo",
+                   preprocess.return_smile_corners(os.path.join("webapi/UPLOAD_FOLDER_PHOTOS", filename)),
+                   x.username)
+        return jsonify("Photo successfully parsed")
+    return "Request unauthorized"
 
 
 @app.route('/get_text', methods=['GET'])
@@ -156,7 +165,9 @@ def parse_voice():
         # vrem sa determinam asemanarea dintre ce a zis si ce trebuia sa zica
         nr_mistakes = preprocess.check_slurred_speech(said, int(id_text[0]))
         user = User.query.filter_by(username=get_jwt_identity()).first()
-    return jsonify({"speech_test": nr_mistakes})
+        write_data("speech_text", nr_mistakes, user.username)
+        return jsonify("Speech recognized")
+    return "Request unauthorized"
 
 
 @app.route('/send_texting_test', methods=['GET', 'POST'])
@@ -172,10 +183,15 @@ def send_texting_test():
         input_text = request.form.getlist('input_text')[0]
         # print(id_text)
         differences = preprocess.check_similarity(id_text, input_text)
-    return jsonify({"mistakes": differences[0], "total_letters": differences[1]})
+        user = User.query.filter_by(username=get_jwt_identity()).first()
+        write_data("mistakes", differences[0], user.username)
+        write_data("total_letters", differences[1], user.username)
+        return jsonify("Text parsed")
+    return "Request unauthorized"
 
 
 @app.route('/send_final_result', methods=['GET', 'POST'])
+@jwt_required
 def send_final_result():
     """
     At this point we have all the necessary data to make a comparision between the database and the info we have received now.
@@ -184,13 +200,11 @@ def send_final_result():
     """
     if request.method == "POST":
         # todo build the dictionary for the class that takes decidsion
-        preprocess = PreprocessData
-        data = request.get_data().decode('utf-8')
-        data = data.replace("\\n", "\n")
-        data = data.replace("&", ", ")
-        good_data = "{" + data + "}"
-        json_file = json.loads(good_data)
-        data = preprocess.build_data_for_decision(json_file)
-        # builder = take_decision.builder(data)
-        # print(builder)
+        preprocess = PreprocessData()
+        user = User.query.filter_by(username=get_jwt_identity()).first()
+        normal_image_data, smiling_image_data, total_letters, mistakes, speech_test_mistakes = calculate_user_data(user)
+        normal_data = preprocess.build_data_for_decision(normal_image_data, smiling_image_data, mistakes, total_letters,
+                                                         speech_test_mistakes)
+        jsoned_data = preprocess.build_data_for_decision_from_json(user.username)
+
     # return jsonify({"verditct": 1 if builder.compute_symptoms() else 0})
