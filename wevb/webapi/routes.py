@@ -2,12 +2,13 @@ from webapi.models import User, NormalPhoto, SmilingPhoto, TypingTest, Recording
 from webapi import app, bcrypt, db, conn
 from flask import request, jsonify
 from sqlalchemy import exc
-from webapi.functionalities import save_photo, create_json_file, write_data
+# from webapi.functionalities import save_photo
 from webapi.detection.preprocessing import PreprocessData
 from webapi.detection.take_decision import builder
-from webapi.functionalities import calculate_user_data
+# from webapi.functionalities import calculate_user_data
 from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity, create_refresh_token, \
     jwt_refresh_token_required
+
 import random, os, json
 
 
@@ -100,14 +101,17 @@ def check_symmetry_normal_photo():
     """
     if request.method == 'POST':
         preprocess = PreprocessData()
+        calculator = builder()
         f = request.files['image']
         filename = f.filename
         f.save(os.path.join(app.config['UPLOAD_FOLDER_PHOTOS'], filename))
         x = User.query.filter_by(username=get_jwt_identity()).first()
-        create_json_file(x.username)
-        write_data("normal_photo",
-                   preprocess.return_face_parts(os.path.join(app.config['UPLOAD_FOLDER_PHOTOS'], filename)), x.username)
-        return jsonify("Photo successfully parsed")
+        preprocess.write_mouth_eyes_data_tojson(x,os.path.join(app.config['UPLOAD_FOLDER_PHOTOS'], filename))
+        score = calculator.detect_moutheyes_abnormalities(x.username)
+        if score>15:
+            return "Call 911"
+        else:
+             return "Face ok!"
     return "Request unauthorized"
 
 
@@ -120,14 +124,17 @@ def get_smiley_corners():
     """
     if request.method == 'POST':
         preprocess = PreprocessData()
+        calculator = builder()
         f = request.files['image']
         filename = f.filename
         f.save(os.path.join("webapi/UPLOAD_FOLDER_PHOTOS", filename))
         x = User.query.filter_by(username=get_jwt_identity()).first()
-        write_data("smiling_photo",
-                   preprocess.return_smile_corners(os.path.join("webapi/UPLOAD_FOLDER_PHOTOS", filename)),
-                   x.username)
-        return jsonify("Photo successfully parsed")
+        preprocess.write_smiling_data_tojson(x,os.path.join("webapi/UPLOAD_FOLDER_PHOTOS", filename))
+        score = calculator.detect_smiling_abnormalities(x.username)
+        if score>15:
+            return "Call 911!"
+        else:
+            return "Smile ok!"
     return "Request unauthorized"
 
 
@@ -154,19 +161,24 @@ def parse_voice():
     if request.method == "POST":
         # recordingul
         preprocess = PreprocessData()
+        calculator = builder()
         f = request.files['recording']
         # id-ul textului
-        id_text = request.form.getlist('id_text')
+        id_text = int(request.form.getlist('id_text')[0])
         filename = f.filename
         f.save(os.path.join("webapi/UPLOAD_FOLDER_RECORDINGS", filename))
         # aflam ce a zis de fapt vorbitorul
         said = preprocess.get_text_from_wav(
             os.path.join("webapi/UPLOAD_FOLDER_RECORDINGS", filename))
         # vrem sa determinam asemanarea dintre ce a zis si ce trebuia sa zica
-        nr_mistakes = preprocess.check_slurred_speech(said, int(id_text[0]))
+        # nr_mistakes = preprocess.check_slurred_speech(said, int(id_text[0]))
         user = User.query.filter_by(username=get_jwt_identity()).first()
-        write_data("speech_text", nr_mistakes, user.username)
-        return jsonify("Speech recognized")
+        preprocess.write_recording_data(user,os.path.join("webapi/UPLOAD_FOLDER_RECORDINGS", filename),id_text)
+        score = calculator.detect_speech_abnormalities(user.username)
+        if score>5:
+            return "Call 911"
+        else:
+            return "Speech ok!"
     return "Request unauthorized"
 
 
@@ -179,13 +191,14 @@ def send_texting_test():
     """
     if request.method == 'POST':
         preprocess = PreprocessData()
+        calculator = builder()
         id_text = int(request.form.getlist('id_text')[0])
         input_text = request.form.getlist('input_text')[0]
         # print(id_text)
         differences = preprocess.check_similarity(id_text, input_text)
         user = User.query.filter_by(username=get_jwt_identity()).first()
-        write_data("mistakes", differences[0], user.username)
-        write_data("total_letters", differences[1], user.username)
+        preprocess.write_texting_data(user,input_text,id_text)
+        score = calculator.detect_typing_abnormalities(user.username)
         return jsonify("Text parsed")
     return "Request unauthorized"
 

@@ -2,7 +2,7 @@ import secrets
 import os
 from webapi.models import User
 from webapi import app
-from webapi.detection.preprocessing import PreprocessData
+# from webapi.detection.preprocessing import PreprocessData
 import json
 
 
@@ -29,11 +29,11 @@ def write_data(key, data, file_name):
         json.dump(old_data, my_file)
 
 
-def calculate_user_data(my_user):
-    preprocessor = PreprocessData()
-    print(type(my_user.normal_photo.photo_name))
-    normal_image_data = preprocessor.return_face_parts(my_user.normal_photo.photo_name)
-    smiling_image_data  = preprocessor.return_smile_corners(my_user.smiling_photo.photo_name)
-    total_letters,mistakes = my_user.typing_test.total_letters,my_user.typing_test.mistakes
-    nr_mistakes = preprocessor.check_slurred_speech(my_user.recording.recording_name,my_user.recording.id_text)
-    return normal_image_data,smiling_image_data,total_letters,mistakes,nr_mistakes
+# def calculate_user_data(my_user):
+#     preprocessor = PreprocessData()
+#     print(type(my_user.normal_photo.photo_name))
+#     normal_image_data = preprocessor.return_face_parts(my_user.normal_photo.photo_name)
+#     smiling_image_data  = preprocessor.return_smile_corners(my_user.smiling_photo.photo_name)
+#     total_letters,mistakes = my_user.typing_test.total_letters,my_user.typing_test.mistakes
+#     nr_mistakes = preprocessor.check_slurred_speech(my_user.recording.recording_name,my_user.recording.id_text)
+#     return normal_image_data,smiling_image_data,total_letters,mistakes,nr_mistakes

@@ -1,82 +1,100 @@
 import numpy as np
+import json
 
 
 class builder:
-    def __init__(self, data):
+    def __init__(self):
+        pass
         # print(data)
-        self.mouth = (data['left_mouth'], data['right_mouth'])
-        self.corners = (data['left_mouth_corner'], data['right_mouth_corner'])
-        self.left_eye = data['left_eye']
-        self.right_eye = data['right_eye']
-        self.smiley_corners = data['smiley_corners']
-        self.texting_test = data['texting_test']
-        self.speech_test = data['speech_test']
-        self.distances = (data['upper_point'], data['lower_point'])
-        self.distances_smiling = (data['upper_point_smiling'], data['lower_point_smiling'])
-        # print(self.calculate_distance_bettween_corners(), self.calculate_distance_bettween_smiling_corners())
+        # self.mouth = (data['left_mouth'], data['right_mouth'])
+        # self.corners = (data['left_mouth_corner'], data['right_mouth_corner'])
+        # self.left_eye = data['left_eye']
+        # self.right_eye = data['right_eye']
+        # self.smiley_corners = data['smiley_corners']
+        # self.texting_test = data['texting_test']
+        # self.speech_test = data['speech_test']
+        # self.distances = (data['upper_point'], data['lower_point'])
+        # self.distances_smiling = (data['upper_point_smiling'], data['lower_point_smiling'])
+        # # print(self.calculate_distance_bettween_corners(), self.calculate_distance_bettween_smiling_corners())
 
-    def calculate_asymmetry_mouth(self):
-        left_mean = np.mean(list(map(lambda x: x[1], self.mouth[0])))
-        right_mean = np.mean(list(map(lambda x: x[1], self.mouth[1])))
+    def calculate_asymmetry_mouth(self, mouth):
+        left_mean = np.mean(list(map(lambda x: x[1], mouth[0])))
+        right_mean = np.mean(list(map(lambda x: x[1], mouth[1])))
         return left_mean, right_mean
 
-    def calculate_asymmetry_eyes(self):
-        left_mean = np.mean(list(map(lambda x: x[1], self.left_eye)))
-        right_mean = np.mean(list(map(lambda x: x[1], self.right_eye)))
-        return left_mean, right_mean
-
-    def calculate_distance_between_corners(self):
-        return np.linalg.norm(np.array(self.corners[0]) - np.array(self.corners[1]))
-
-    def calculate_distance_bettween_smiling_corners(self):
-        return np.linalg.norm(np.array(self.smiley_corners[0]) - np.array(self.smiley_corners[1]))
-
-    def calculcate_vertical_distance(self):
-        return np.linalg.norm(np.array(self.distances[0]) - np.array(self.distances[1]))
-
-    def calculate_vertical_distance_smiling(self):
-        return np.linalg.norm(np.array(self.distances_smiling[0]) - np.array(self.distances_smiling[1]))
-
-    def get_mouth_asymmetry(self):
+    def get_mouth_asymmetry(self, mouth):
         """
         :return: difference between mean of left mouth and right mouth
         """
-        left_mean, right_mean = self.calculate_asymmetry_mouth()
+        left_mean, right_mean = self.calculate_asymmetry_mouth(mouth)
         return abs(left_mean - right_mean)
 
-    def get_eyes_asymmetry(self):
+    def calculate_asymmetry_eyes(self, left_eye, right_eye):
+        left_mean = np.mean(list(map(lambda x: x[1], left_eye)))
+        right_mean = np.mean(list(map(lambda x: x[1], right_eye)))
+        return left_mean, right_mean
+
+    def get_eyes_asymmetry(self, left_eye, right_eye):
         """
         :return: difference bettween mean of left eye and right eye
         """
-        left_mean, right_mean = self.calculate_asymmetry_eyes()
+        left_mean, right_mean = self.calculate_asymmetry_eyes(left_eye, right_eye)
         return abs(left_mean - right_mean)
 
-    def calculate_distance_corners_smiling_normal(self):
+    def calculate_distance_between_corners(self, corners):
         """
-        :return: difference between normal corners and smiling corners
+        Calculates the distance between the 2 corners of the mouth.
+        :param corners: Corners[0] = left_corner, Corners[1] = right_corner
+        :return:
         """
-        return abs(self.calculate_distance_bettween_smiling_corners() - self.calculate_distance_between_corners())
+        return np.linalg.norm(np.array(corners[0]) - np.array(corners[1]))
 
-    def get_distance_vertical_smiling_normal(self):
+    def calculcate_vertical_distance(self, distances):
         """
-        :return:difference bettween normal distance and smiling distance
+        Calculates the vertical distance between the upper most point of the lips and the lower most point
+        :param distances:
+        :return:
         """
-        return abs(self.calculate_vertical_distance_smiling() - self.calculcate_vertical_distance())
+        return np.linalg.norm(np.array(distances[0]) - np.array(distances[1]))
 
-    def compute_symptoms(self):
-        mouth_asymmetry = self.get_mouth_asymmetry()
-        eyes_asymmetry = self.get_eyes_asymmetry()
-        smiling_distance = self.calculate_distance_corners_smiling_normal()
-        vertical_distance = self.get_distance_vertical_smiling_normal()
-        print(smiling_distance, vertical_distance)
-        smiling_distance = 1000 / (smiling_distance)
-        vertical_distance = 1000 / (vertical_distance)
-        print(smiling_distance, vertical_distance)
-        missing_letters = self.texting_test[1] - self.texting_test[0]
-        missing_words = self.speech_test
-        return sum(list((mouth_asymmetry, eyes_asymmetry, smiling_distance, vertical_distance, missing_letters,
-                         missing_words))) > 80
+    def detect_moutheyes_abnormalities(self, username):
+        """
+        We will calculate the differences bettween normal face assymetry and just received face assymetry(eyes and mouth)
+        :param username:the username of the user
+        :return:
+        """
+        with open(f"webapi/json_files/{username}db.json")as my_json:
+            db_json = json.load(my_json)
+        with open(f"webapi/json_files/{username}now.json")as my_json:
+            now_json = json.load(my_json)
+        mouth_difference = abs(db_json['normal_photo']['mouth'] - now_json['normal_photo']['mouth'])
+        eyes_difference = abs(db_json['normal_photo']['eyes'] - now_json['normal_photo']['eyes'])
+        return mouth_difference + eyes_difference
 
-    def __str__(self):
-        return f"Mouth details are:\n\tLeft mouth {self.mouth[0]}\n\tRight mouth {self.mouth[1]}\n. Mouth corners {self.corners}\n. Smile corners {self.smiley_corners}\n. Left eye {self.left_eye}\n. Right eye {self.right_eye}\n. Upper/Lower normal mouth {self.distances}\n. Upper/Lower points smiling {self.distances_smiling}.Texting test {self.texting_test}\n. Speech test {self.speech_test}\n"
+    def detect_smiling_abnormalities(self, username):
+        with open(f"webapi/json_files/{username}db.json")as my_json:
+            db_json = json.load(my_json)
+        with open(f"webapi/json_files/{username}now.json")as my_json:
+            now_json = json.load(my_json)
+        corner_difference = abs(
+            db_json['smiling_data']['distance_corners'] - now_json['smiling_data']['distance_corners'])
+        vertical_difference = abs(
+            db_json['smiling_data']['vertical_distance'] - now_json['smiling_data']['vertical_distance'])
+        return corner_difference + vertical_difference
 
+    def detect_speech_abnormalities(self, username):
+        with open(f"webapi/json_files/{username}db.json")as my_json:
+            db_json = json.load(my_json)
+        with open(f"webapi/json_files/{username}now.json")as my_json:
+            now_json = json.load(my_json)
+        total_mistakes = abs(db_json['speech_mistakes'] - now_json['speech_mistakes'])
+        return total_mistakes
+
+    def detect_typing_abnormalities(self, username):
+        with open(f"webapi/json_files/{username}db.json")as my_json:
+            db_json = json.load(my_json)
+        with open(f"webapi/json_files/{username}now.json")as my_json:
+            now_json = json.load(my_json)
+        total_mistakes = abs((db_json['texting_test']["mistakes"] / db_json['texting_test']["total_letters"]) - (
+                    now_json['texting_test']["mistakes"] /now_json['texting_test']["total_letters"]))
+        return total_mistakes
