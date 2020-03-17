@@ -41,12 +41,13 @@ def login():
         if user and bcrypt.check_password_hash(user.password, request.form['password']):
             ret = {
                 'access_token': create_access_token(identity=user.username),
-                'refresh_token': create_refresh_token(identity=user.username)
+                'refresh_token': create_refresh_token(identity=user.username),
+                "succes": "Correct data!"
             }
             return jsonify(ret), 200
 
         else:
-            return jsonify({"success": "Incorrect data!"})
+            return jsonify({"succes":"Incorrect data!"})
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -213,11 +214,13 @@ def send_final_result():
     """
     if request.method == "POST":
         # todo build the dictionary for the class that takes decidsion
-        preprocess = PreprocessData()
+        calculator = builder()
         user = User.query.filter_by(username=get_jwt_identity()).first()
-        normal_image_data, smiling_image_data, total_letters, mistakes, speech_test_mistakes = calculate_user_data(user)
-        normal_data = preprocess.build_data_for_decision(normal_image_data, smiling_image_data, mistakes, total_letters,
-                                                         speech_test_mistakes)
-        jsoned_data = preprocess.build_data_for_decision_from_json(user.username)
+        score = calculator.caculate_total_score(user.username)
+        if score >30:
+            return "Call 911"
+        else:
+            return "You are ok! Calm down"
+    return "Unauthorized Request"
 
-    # return jsonify({"verditct": 1 if builder.compute_symptoms() else 0})
+

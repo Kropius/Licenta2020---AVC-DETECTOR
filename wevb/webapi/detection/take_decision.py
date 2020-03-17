@@ -96,5 +96,12 @@ class builder:
         with open(f"webapi/json_files/{username}now.json")as my_json:
             now_json = json.load(my_json)
         total_mistakes = abs((db_json['texting_test']["mistakes"] / db_json['texting_test']["total_letters"]) - (
-                    now_json['texting_test']["mistakes"] /now_json['texting_test']["total_letters"]))
+                now_json['texting_test']["mistakes"] / now_json['texting_test']["total_letters"]))
         return total_mistakes
+
+    def caculate_total_score(self, username):
+        score = self.detect_typing_abnormalities(username) + self.detect_speech_abnormalities(
+            username) + self.detect_smiling_abnormalities(username) +\
+        self.detect_moutheyes_abnormalities(username)
+        return score
+
