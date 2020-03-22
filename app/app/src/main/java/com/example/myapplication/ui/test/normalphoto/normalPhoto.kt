@@ -26,7 +26,12 @@ import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.media.Image
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import com.example.myapplication.R
+import com.example.myapplication.databinding.ActivityLoginBinding
+import com.example.myapplication.databinding.ActivityNormalPhotoBinding
+import com.example.myapplication.ui.auth.LoginViewModel
 import kotlinx.android.synthetic.main.activity_first.*
 import kotlinx.android.synthetic.main.activity_normal_photo.view.*
 import java.io.IOException
@@ -34,13 +39,19 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class normalPhoto : AppCompatActivity() {
+class normalPhoto : AppCompatActivity(), NormalPhotoListener {
+
 
     val CAMERA_PERMISSION_REQUEST_CODE = 100;
     val REQUEST_IMAGE_CAPTURE = 1
+    var viewModel:NormalPhotoViewModel? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.myapplication.R.layout.activity_normal_photo)
+        val binding: ActivityNormalPhotoBinding = DataBindingUtil.setContentView<ActivityNormalPhotoBinding>(this, com.example.myapplication.R.layout.activity_normal_photo)
+        viewModel = ViewModelProviders.of(this).get(NormalPhotoViewModel::class.java)
+        binding.viewmodel = viewModel
+        viewModel!!.normalPhotoListener = this
+        viewModel!!.photoUri = currentPhotoPath
         setupPermissions()
 
     }
@@ -83,7 +94,6 @@ class normalPhoto : AppCompatActivity() {
                             it
                     )
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                    Toast.makeText(this,photoURI.toString(),Toast.LENGTH_LONG).show()
                     startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
                 }
             }
@@ -91,23 +101,26 @@ class normalPhoto : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode,resultCode,data)
+        super.onActivityResult(requestCode, resultCode, data)
 
-       if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-           Toast.makeText(this,currentPhotoPath,Toast.LENGTH_LONG).show()
-           galleryAddPic()
-           val imgFile = File(currentPhotoPath)
-           val myBitMap = BitmapFactory.decodeFile(imgFile.absolutePath)
-           var myImg = findViewById<ImageView>(R.id.myPhoto)
-           myImg.setImageBitmap(myBitMap)
-           val layoutParams = myImg.getLayoutParams();
-           layoutParams.width = 1400;
-           layoutParams.height = 700;
-           myImg.setLayoutParams(layoutParams);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == AppCompatActivity.RESULT_OK) {
+            galleryAddPic()
+            val imgFile = File(currentPhotoPath!!)
+            val myBitMap = BitmapFactory.decodeFile(imgFile.absolutePath)
+            var myImg = findViewById<ImageView>(R.id.myPhoto)
+            myImg.setImageBitmap(myBitMap)
+            val layoutParams = myImg.getLayoutParams();
+            layoutParams.width = 1400;
+            layoutParams.height = 700;
+            myImg.setLayoutParams(layoutParams);
+            viewModel!!.photoUri = currentPhotoPath
 
-       }
+
+
+        }
     }
-    lateinit var currentPhotoPath: String
+
+    var currentPhotoPath: String?=null
 
     @Throws(IOException::class)
     private fun createImageFile(): File {
@@ -123,6 +136,7 @@ class normalPhoto : AppCompatActivity() {
             currentPhotoPath = absolutePath
         }
     }
+
     private fun galleryAddPic() {
         Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE).also { mediaScanIntent ->
             val f = File(currentPhotoPath)
@@ -130,5 +144,19 @@ class normalPhoto : AppCompatActivity() {
             sendBroadcast(mediaScanIntent)
         }
     }
+
+    override fun onStared() {
+        Toast.makeText(this,"Sending the photo",Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onSuccess(response: String?) {
+
+    }
+
+    override fun onFailure(message: String) {
+        Toast.makeText(this,"Empty the photo",Toast.LENGTH_SHORT).show()
+
+    }
 }
+
 

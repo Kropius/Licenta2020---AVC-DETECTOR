@@ -30,6 +30,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
                 loginListener?.onSuccess(loginRespone.body()?.succes)
                 if (loginRespone.body()?.succes.toString().equals("Correct data!")) {
                     val login = loginRespone.body()
+                    Log.i("Info","token:  "+login?.access_token.toString())
                     addTokensToPreferences(login?.access_token.toString(), login?.refresh_token.toString(), getApplication())
                     getTokens(getApplication())
                 }

@@ -7,7 +7,7 @@ from webapi.detection.preprocessing import PreprocessData
 from webapi.detection.take_decision import builder
 # from webapi.functionalities import calculate_user_data
 from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity, create_refresh_token, \
-    jwt_refresh_token_required
+    jwt_refresh_token_required, JWTManager, get_raw_jwt_header, get_raw_jwt
 
 import random, os, json
 
@@ -20,6 +20,8 @@ def authenticate(username, password):
 
 def identity(payload):
     username = payload['identity']
+    print(username)
+    print(User.find_by_id(username))
     return User.find_by_id(username)
 
 
@@ -39,15 +41,18 @@ def login():
     if request.method == 'POST':
         user = User.query.filter_by(username=request.form['username']).first()
         if user and bcrypt.check_password_hash(user.password, request.form['password']):
+            x = create_access_token(identity=user.username)
+            print(x)
             ret = {
-                'access_token': create_access_token(identity=user.username),
+
+                'access_token': x,
                 'refresh_token': create_refresh_token(identity=user.username),
                 "succes": "Correct data!"
             }
             return jsonify(ret), 200
 
         else:
-            return jsonify({"succes":"Incorrect data!"})
+            return jsonify({"succes": "Incorrect data!"})
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -100,19 +105,25 @@ def check_symmetry_normal_photo():
     We received a normal photo of the user and we will return an array with the most important data
     :return:
     """
+
     if request.method == 'POST':
+        print(request.headers)
+        print(get_jwt_identity())
+        # print(get_raw_jwt_header())
+        print(get_raw_jwt())
         preprocess = PreprocessData()
         calculator = builder()
         f = request.files['image']
         filename = f.filename
         f.save(os.path.join(app.config['UPLOAD_FOLDER_PHOTOS'], filename))
         x = User.query.filter_by(username=get_jwt_identity()).first()
-        preprocess.write_mouth_eyes_data_tojson(x,os.path.join(app.config['UPLOAD_FOLDER_PHOTOS'], filename))
+
+        preprocess.write_mouth_eyes_data_tojson(x, os.path.join(app.config['UPLOAD_FOLDER_PHOTOS'], filename))
         score = calculator.detect_moutheyes_abnormalities(x.username)
-        if score>15:
+        if score > 15:
             return "Call 911"
         else:
-             return "Face ok!"
+            return "Face ok!"
     return "Request unauthorized"
 
 
@@ -123,16 +134,18 @@ def get_smiley_corners():
     We received a smiling photo of the user and we will return an array with the most important data
     :return:
     """
+
     if request.method == 'POST':
+        print(request.files)
         preprocess = PreprocessData()
         calculator = builder()
         f = request.files['image']
         filename = f.filename
         f.save(os.path.join("webapi/UPLOAD_FOLDER_PHOTOS", filename))
         x = User.query.filter_by(username=get_jwt_identity()).first()
-        preprocess.write_smiling_data_tojson(x,os.path.join("webapi/UPLOAD_FOLDER_PHOTOS", filename))
+        preprocess.write_smiling_data_tojson(x, os.path.join("webapi/UPLOAD_FOLDER_PHOTOS", filename))
         score = calculator.detect_smiling_abnormalities(x.username)
-        if score>15:
+        if score > 15:
             return "Call 911!"
         else:
             return "Smile ok!"
@@ -174,9 +187,9 @@ def parse_voice():
         # vrem sa determinam asemanarea dintre ce a zis si ce trebuia sa zica
         # nr_mistakes = preprocess.check_slurred_speech(said, int(id_text[0]))
         user = User.query.filter_by(username=get_jwt_identity()).first()
-        preprocess.write_recording_data(user,os.path.join("webapi/UPLOAD_FOLDER_RECORDINGS", filename),id_text)
+        preprocess.write_recording_data(user, os.path.join("webapi/UPLOAD_FOLDER_RECORDINGS", filename), id_text)
         score = calculator.detect_speech_abnormalities(user.username)
-        if score>5:
+        if score > 5:
             return "Call 911"
         else:
             return "Speech ok!"
@@ -198,7 +211,7 @@ def send_texting_test():
         # print(id_text)
         differences = preprocess.check_similarity(id_text, input_text)
         user = User.query.filter_by(username=get_jwt_identity()).first()
-        preprocess.write_texting_data(user,input_text,id_text)
+        preprocess.write_texting_data(user, input_text, id_text)
         score = calculator.detect_typing_abnormalities(user.username)
         return jsonify("Text parsed")
     return "Request unauthorized"
@@ -217,10 +230,8 @@ def send_final_result():
         calculator = builder()
         user = User.query.filter_by(username=get_jwt_identity()).first()
         score = calculator.caculate_total_score(user.username)
-        if score >30:
+        if score > 30:
             return "Call 911"
         else:
             return "You are ok! Calm down"
     return "Unauthorized Request"
-
-
