@@ -183,7 +183,7 @@ def parse_voice():
     return "Request unauthorized"
 
 
-@app.route('/send_texting_test', methods=['GET', 'POST'])
+@app.route('/send_texting_test', methods=['POST'])
 @jwt_required
 def send_texting_test():
     """
