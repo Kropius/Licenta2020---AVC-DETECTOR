@@ -1,5 +1,6 @@
 package com.example.myapplication.data.repositories
 
+import android.content.Context
 import com.example.myapplication.data.network.MyApi
 import com.example.myapplication.data.network.responses.normalPhotoResponse
 import okhttp3.MultipartBody
@@ -9,9 +10,9 @@ import retrofit2.Call
 import retrofit2.Response
 
 class NormalPhotoRepository {
-    fun sendNormalPhoto(token:String,file:MultipartBody.Part): Call<ResponseBody> {
+    suspend fun sendNormalPhoto(token: String, file: MultipartBody.Part, context: Context): Response<normalPhotoResponse>{
 
-        return MyApi().uploadNormalPhoto(token,file)
+        return MyApi(context).uploadNormalPhoto(token, file)
 
     }
 }

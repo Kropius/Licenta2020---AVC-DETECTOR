@@ -120,10 +120,10 @@ def check_symmetry_normal_photo():
 
         preprocess.write_mouth_eyes_data_tojson(x, os.path.join(app.config['UPLOAD_FOLDER_PHOTOS'], filename))
         score = calculator.detect_moutheyes_abnormalities(x.username)
-        if score > 15:
-            return "Call 911"
+        if score > 5:
+            return jsonify({"response":"Call 911"})
         else:
-            return "Face ok!"
+            return jsonify({"response":"Face ok!"})
     return "Request unauthorized"
 
 
@@ -146,9 +146,9 @@ def get_smiley_corners():
         preprocess.write_smiling_data_tojson(x, os.path.join("webapi/UPLOAD_FOLDER_PHOTOS", filename))
         score = calculator.detect_smiling_abnormalities(x.username)
         if score > 15:
-            return "Call 911!"
+            return jsonify({"response":"Call 911!"})
         else:
-            return "Smile ok!"
+            return jsonify({"response":"Smile ok!"})
     return "Request unauthorized"
 
 

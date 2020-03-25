@@ -1,5 +1,6 @@
 package com.example.myapplication.data.network.responses
 
-data class normalPhotoResponse (
+data class smilingPhotoResponse (
     val response:String?
 )
+

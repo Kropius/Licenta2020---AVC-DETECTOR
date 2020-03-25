@@ -99,7 +99,7 @@ class PreprocessData:
 
             cv2.waitKey(0)
             # build_input_from_photo(output_coords)
-
+        print("face parts",output_coords)
         return output_coords
 
     def return_face_parts(self, image_path):
@@ -107,7 +107,8 @@ class PreprocessData:
         :param image_path: All the coordinates from body faces
         :return:
         """
-        print(self.detecting_face_parts(image_path))
+        print("mata",image_path)
+        # print(self.detecting_face_parts(image_path))
         return self.build_input_from_photo(self.detecting_face_parts(image_path))
 
     # def return_smile_corners(self, image_path):
@@ -124,6 +125,7 @@ class PreprocessData:
     def build_input_from_photo(self, array_of_coordinates):
         array_of_coordinates = {x: y for i in array_of_coordinates for x, y in i.items()}
         output = dict()
+        print(array_of_coordinates)
         mounth = self.prepare_mouth(array_of_coordinates['mouth'][:12])
         left_eye = array_of_coordinates['left_eye']
         right_eye = array_of_coordinates['right_eye']

@@ -1,9 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.test.smilingphoto.smilingPhoto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.myapplication.ui.test.smilingphoto.SmilingPhotoViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mySmilingPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/linear"
+        tools:context=".ui.test.smilingphoto.smilingPhoto">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:fontFamily="@font/carter_one"
+            android:text="@string/title_activity_smiling_photo"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023" />
+
+        <ImageView
+            android:id="@+id/mySmilingImageView"
+            android:layout_width="252dp"
+            android:layout_height="233dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.192"
+            app:srcCompat="@drawable/smile" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="286dp"
+            android:layout_height="118dp"
+            android:fontFamily="@font/carter_one"
+            android:text="@string/guide_smiling_photo"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.706" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="149dp"
+            android:layout_height="53dp"
+            android:background="@drawable/my_buton"
+            android:fontFamily="@font/carter_one"
+            android:onClick="startGallerySmiling"
+            android:text="@string/gallery"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.938"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.845" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="149dp"
+            android:layout_height="53dp"
+            android:background="@drawable/my_buton"
+            android:fontFamily="@font/carter_one"
+            android:onClick="startCameraSmiling"
+            android:text="@string/camera"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.845" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="172dp"
+            android:layout_height="41dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/my_buton"
+            android:fontFamily="@font/carter_one"
+            android:text="@string/next"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            android:onClick="@{viewmodel.onNextButtoClickSmiling}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.451"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+        <ProgressBar
+            android:visibility="invisible"
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

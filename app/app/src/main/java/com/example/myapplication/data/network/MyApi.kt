@@ -1,7 +1,9 @@
 package com.example.myapplication.data.network
 
+import android.content.Context
 import com.example.myapplication.data.network.responses.loginResponse
 import com.example.myapplication.data.network.responses.normalPhotoResponse
+import com.example.myapplication.data.network.responses.smilingPhotoResponse
 import com.example.myapplication.data.repositories.NormalPhotoRepository
 import com.example.myapplication.util.BasicAuthInterceptor
 import okhttp3.MultipartBody
@@ -30,14 +32,18 @@ interface MyApi {
 
     @Multipart
     @POST("check_symmetry_normal_img")
-    fun uploadNormalPhoto(@Header("Bearer") token:String,
-                                      @Part file: MultipartBody.Part): Call<ResponseBody>
+    suspend fun uploadNormalPhoto(@Header("Bearer") token:String,
+                                      @Part file: MultipartBody.Part): Response<normalPhotoResponse>
 
+    @Multipart
+    @POST("get_smiley_corners")
+    suspend fun uploadSmilingPhoto(@Header("Bearer") token:String,
+                                  @Part file: MultipartBody.Part): Response<smilingPhotoResponse>
 
     companion object {
-        operator fun invoke(): MyApi {
+        operator fun invoke(context:Context): MyApi {
             val okHttpClient = OkHttpClient().newBuilder()
-                    .addInterceptor(BasicAuthInterceptor())
+                    .addInterceptor(BasicAuthInterceptor(context))
                     .connectTimeout(60, TimeUnit.SECONDS)
                     .readTimeout(60, TimeUnit.SECONDS)
                     .writeTimeout(60, TimeUnit.SECONDS)

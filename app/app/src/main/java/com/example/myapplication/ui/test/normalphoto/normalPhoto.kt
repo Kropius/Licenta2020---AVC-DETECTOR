@@ -1,10 +1,8 @@
 package com.example.myapplication.ui.test.normalphoto
 
 import android.Manifest
-import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
@@ -12,28 +10,21 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import com.google.gson.internal.bind.TypeAdapters.URI
-import java.io.File
-import androidx.core.app.ActivityCompat.startActivityForResult
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import android.media.Image
-import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.myapplication.R
-import com.example.myapplication.databinding.ActivityLoginBinding
 import com.example.myapplication.databinding.ActivityNormalPhotoBinding
-import com.example.myapplication.ui.auth.LoginViewModel
-import kotlinx.android.synthetic.main.activity_first.*
-import kotlinx.android.synthetic.main.activity_normal_photo.view.*
+import com.example.myapplication.ui.test.smilingphoto.smilingPhoto
+import com.example.myapplication.util.hide
+import com.example.myapplication.util.show
+import kotlinx.android.synthetic.main.activity_login.*
+import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -44,9 +35,12 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
 
     val CAMERA_PERMISSION_REQUEST_CODE = 100;
     val REQUEST_IMAGE_CAPTURE = 1
-    var viewModel:NormalPhotoViewModel? = null
+    val REQUEST_IMAGE_GALLERY = 2
+    var viewModel: NormalPhotoViewModel? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        getSupportActionBar()?.hide();
+
         val binding: ActivityNormalPhotoBinding = DataBindingUtil.setContentView<ActivityNormalPhotoBinding>(this, com.example.myapplication.R.layout.activity_normal_photo)
         viewModel = ViewModelProviders.of(this).get(NormalPhotoViewModel::class.java)
         binding.viewmodel = viewModel
@@ -58,7 +52,7 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
 
     private fun setupPermissions() {
         val permission = ContextCompat.checkSelfPermission(this,
-                Manifest.permission.CAMERA)
+                Manifest.permission.READ_EXTERNAL_STORAGE)
 
         if (permission != PackageManager.PERMISSION_GRANTED) {
             Log.i("Info", "Permission to record denied")
@@ -70,8 +64,14 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
 
     private fun makeRequest() {
         ActivityCompat.requestPermissions(this,
-                arrayOf(Manifest.permission.CAMERA),
+                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
                 CAMERA_PERMISSION_REQUEST_CODE)
+    }
+
+    public fun startGallery(view: View) {
+        val photoPickerIntent = Intent(Intent.ACTION_PICK);
+        photoPickerIntent.setType("image/*");
+        startActivityForResult(photoPickerIntent, REQUEST_IMAGE_GALLERY);
     }
 
     public fun startCamera(view: View) {
@@ -100,6 +100,15 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
         }
     }
 
+    fun getPath(uri: Uri): String {
+        val projection = Array<String>(1) { MediaStore.Images.Media.DATA };
+        val cursor = managedQuery(uri, projection, null, null, null);
+        startManagingCursor(cursor);
+        val column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        cursor.moveToFirst();
+        return cursor.getString(column_index);
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -116,11 +125,26 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
             viewModel!!.photoUri = currentPhotoPath
 
 
+        } else if (requestCode == REQUEST_IMAGE_GALLERY) {
+            if (data != null) {
+                var ourUri = data.data
+                Toast.makeText(this, getPath(ourUri!!), Toast.LENGTH_LONG).show()
+                var myImg = findViewById<ImageView>(R.id.myPhoto)
+                myImg.setImageURI(ourUri)
+                val layoutParams = myImg.getLayoutParams();
+                layoutParams.width = 1400;
+                layoutParams.height = 700;
+                myImg.setLayoutParams(layoutParams);
+                viewModel!!.photoUri = getPath(ourUri).toString()
 
+
+            } else {
+                Toast.makeText(this, "INVALID", Toast.LENGTH_LONG).show()
+            }
         }
     }
 
-    var currentPhotoPath: String?=null
+    var currentPhotoPath: String? = null
 
     @Throws(IOException::class)
     private fun createImageFile(): File {
@@ -146,15 +170,19 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
     }
 
     override fun onStared() {
-        Toast.makeText(this,"Sending the photo",Toast.LENGTH_SHORT).show()
+        progress_bar.show()
+        Toast.makeText(this, "Sending the photo", Toast.LENGTH_SHORT).show()
     }
 
     override fun onSuccess(response: String?) {
-
+        progress_bar.hide()
+        Toast.makeText(this, response.toString(), Toast.LENGTH_LONG).show()
+        startActivity(Intent(this,smilingPhoto::class.java))
     }
 
     override fun onFailure(message: String) {
-        Toast.makeText(this,"Empty the photo",Toast.LENGTH_SHORT).show()
+        progress_bar.hide()
+        Toast.makeText(this, message.toString(), Toast.LENGTH_LONG).show()
 
     }
 }

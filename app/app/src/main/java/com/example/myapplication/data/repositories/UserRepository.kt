@@ -12,7 +12,7 @@ import retrofit2.Response
 class UserRepository {
     suspend fun userLogin(email: String, password: String, context: Context): Response<loginResponse> {
 
-        return MyApi().userLogin(email, password)
+        return MyApi(context).userLogin(email, password)
 
     }
 }
