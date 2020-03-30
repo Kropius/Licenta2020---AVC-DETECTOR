@@ -19,6 +19,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivitySmilingPhotoBinding
+import com.example.myapplication.ui.test.voiceTest.voiceTest
 import com.example.myapplication.util.hide
 import com.example.myapplication.util.show
 import kotlinx.android.synthetic.main.activity_login.*
@@ -36,7 +37,7 @@ class smilingPhoto : AppCompatActivity(),SmilingPhotoListener {
     override fun onSuccess(response: String?) {
         progress_bar.hide()
         Toast.makeText(this, response.toString(), Toast.LENGTH_LONG).show()
-       // startActivity(Intent(this,smilingPhoto::class.java))
+       startActivity(Intent(this,voiceTest::class.java))
     }
 
     override fun onFailure(message: String) {

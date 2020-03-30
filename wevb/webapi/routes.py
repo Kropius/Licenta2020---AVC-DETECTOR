@@ -181,6 +181,7 @@ def parse_voice():
         id_text = int(request.form.getlist('id_text')[0])
         filename = f.filename
         f.save(os.path.join("webapi/UPLOAD_FOLDER_RECORDINGS", filename))
+        # print(filename)
         # aflam ce a zis de fapt vorbitorul
         said = preprocess.get_text_from_wav(
             os.path.join("webapi/UPLOAD_FOLDER_RECORDINGS", filename))
@@ -190,9 +191,9 @@ def parse_voice():
         preprocess.write_recording_data(user, os.path.join("webapi/UPLOAD_FOLDER_RECORDINGS", filename), id_text)
         score = calculator.detect_speech_abnormalities(user.username)
         if score > 5:
-            return "Call 911"
+            return jsonify({"response":"Call 911"})
         else:
-            return "Speech ok!"
+            return jsonify({"response":"Speech ok!"})
     return "Request unauthorized"
 
 

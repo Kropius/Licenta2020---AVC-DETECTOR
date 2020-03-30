@@ -30,13 +30,14 @@ class SmilingPhotoViewModel(application: Application) : AndroidViewModel(applica
         } else {
             Coroutines.main {
                 val file = File(photoUri!!)
+                Toast.makeText(context,"dumnezeulemare"+file.toString(),Toast.LENGTH_LONG).show()
                 val requestFile: RequestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file)
                 val requestImage = MultipartBody.Part.createFormData("image", file.name, requestFile)
                 // Log.i("Info", "cacat"+getTokens(context).toString())
                 val normalPhotoRespone = SmilingPhotoRepository().sendSmilingPhoto(getTokens(context), requestImage, context)
                 if (normalPhotoRespone.isSuccessful) {
                     smilingPhotoListener?.onSuccess(normalPhotoRespone.body()?.response)
-                    Toast.makeText(context,normalPhotoRespone.body().toString(),Toast.LENGTH_LONG).show()
+                    //  Toast.makeText(context,normalPhotoRespone.body().toString(),Toast.LENGTH_LONG).show()
                 } else {
                     smilingPhotoListener?.onFailure("Error")
                 }

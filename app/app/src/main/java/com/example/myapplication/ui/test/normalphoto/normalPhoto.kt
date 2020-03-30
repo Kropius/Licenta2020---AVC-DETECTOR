@@ -28,12 +28,15 @@ import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.log
 
 
 class normalPhoto : AppCompatActivity(), NormalPhotoListener {
 
 
     val CAMERA_PERMISSION_REQUEST_CODE = 100;
+    val READ_EXTERNAL_PERMISSION_REQUEST_CODE = 101;
+    val WRITE_EXTERNAL_STORAGE = 102
     val REQUEST_IMAGE_CAPTURE = 1
     val REQUEST_IMAGE_GALLERY = 2
     var viewModel: NormalPhotoViewModel? = null
@@ -51,21 +54,38 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
     }
 
     private fun setupPermissions() {
-        val permission = ContextCompat.checkSelfPermission(this,
+        var permission = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.READ_EXTERNAL_STORAGE)
 
         if (permission != PackageManager.PERMISSION_GRANTED) {
-            Log.i("Info", "Permission to record denied")
-            makeRequest()
+            Log.i("Info", "Permission to read to external storage denied")
+            makeRequest(Manifest.permission.READ_EXTERNAL_STORAGE, READ_EXTERNAL_PERMISSION_REQUEST_CODE)
         } else {
             Log.i("Info", "Permission given!")
         }
+        permission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            Log.i("Info", "Permission to use camera denied")
+            makeRequest(Manifest.permission.CAMERA, CAMERA_PERMISSION_REQUEST_CODE)
+        } else {
+            Log.i("Info", "Permission given!")
+        }
+        permission = ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        if(permission!=PackageManager.PERMISSION_GRANTED){
+            Log.i("Info", "Permission to write on external storage denied")
+            makeRequest(Manifest.permission.WRITE_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE)
+
+        }
+        else{
+            Log.i("Info","Permission given!")
+
+        }
     }
 
-    private fun makeRequest() {
+    private fun makeRequest(permission: String, code: Int) {
         ActivityCompat.requestPermissions(this,
-                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                CAMERA_PERMISSION_REQUEST_CODE)
+                arrayOf(permission),
+                code)
     }
 
     public fun startGallery(view: View) {
@@ -177,7 +197,7 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
     override fun onSuccess(response: String?) {
         progress_bar.hide()
         Toast.makeText(this, response.toString(), Toast.LENGTH_LONG).show()
-        startActivity(Intent(this,smilingPhoto::class.java))
+        startActivity(Intent(this, smilingPhoto::class.java))
     }
 
     override fun onFailure(message: String) {

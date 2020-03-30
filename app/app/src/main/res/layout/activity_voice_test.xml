@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.myapplication.ui.test.voiceTest.VoiceTestViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.test.voiceTest.voiceTest"
+    android:background="@drawable/linear">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="191dp"
+        android:layout_height="55dp"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/title_activity_voice_test"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.066" />
+
+    <TextView
+        android:id="@+id/textToSpeech"
+        android:layout_width="327dp"
+        android:layout_height="190dp"
+        android:text="In order to get the text that you need to spell, press REFRESH TEXT"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.287" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="347dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="220dp"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/guide_voice_test"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textToSpeech" />
+
+    <Button
+        android:id="@+id/startRecording"
+        android:layout_width="111dp"
+        android:layout_height="75dp"
+        android:background="@drawable/my_buton"
+        android:fontFamily="@font/carter_one"
+        android:onClick="startStopRecording"
+        android:text="@string/start_record"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.834" />
+
+    <Button
+        android:id="@+id/refreshButton"
+        android:layout_width="111dp"
+        android:layout_height="75dp"
+        android:background="@drawable/my_buton"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/refresh"
+        android:onClick="@{viewmodel.getTextReq}"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.834" />
+
+    <Button
+        android:id="@+id/startListening"
+        android:layout_width="111dp"
+        android:layout_height="75dp"
+        android:background="@drawable/my_buton"
+        android:fontFamily="@font/carter_one"
+        android:onClick="startStopPlaying"
+        android:text="@string/start_listening"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.834" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="136dp"
+        android:layout_height="40dp"
+        android:background="@drawable/my_buton"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/next"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:onClick="@{viewmodel.sendRecording}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.963" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

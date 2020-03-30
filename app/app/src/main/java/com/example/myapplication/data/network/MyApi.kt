@@ -1,9 +1,7 @@
 package com.example.myapplication.data.network
 
 import android.content.Context
-import com.example.myapplication.data.network.responses.loginResponse
-import com.example.myapplication.data.network.responses.normalPhotoResponse
-import com.example.myapplication.data.network.responses.smilingPhotoResponse
+import com.example.myapplication.data.network.responses.*
 import com.example.myapplication.data.repositories.NormalPhotoRepository
 import com.example.myapplication.util.BasicAuthInterceptor
 import okhttp3.MultipartBody
@@ -32,16 +30,24 @@ interface MyApi {
 
     @Multipart
     @POST("check_symmetry_normal_img")
-    suspend fun uploadNormalPhoto(@Header("Bearer") token:String,
-                                      @Part file: MultipartBody.Part): Response<normalPhotoResponse>
+    suspend fun uploadNormalPhoto(@Header("Bearer") token: String,
+                                  @Part file: MultipartBody.Part): Response<normalPhotoResponse>
 
     @Multipart
     @POST("get_smiley_corners")
-    suspend fun uploadSmilingPhoto(@Header("Bearer") token:String,
-                                  @Part file: MultipartBody.Part): Response<smilingPhotoResponse>
+    suspend fun uploadSmilingPhoto(@Header("Bearer") token: String,
+                                   @Part file: MultipartBody.Part): Response<smilingPhotoResponse>
 
+    @GET("get_text")
+    suspend fun getText(@Header("Bearer") token: String): Response<textResponse>
+
+    @Multipart
+    @POST("parse_voice")
+    suspend fun sendVoice(@Header("Bearer")token: String,
+                          @Part file:MultipartBody.Part,
+                          @Part("id_text") id_text:RequestBody):Response<voiceResponse>
     companion object {
-        operator fun invoke(context:Context): MyApi {
+        operator fun invoke(context: Context): MyApi {
             val okHttpClient = OkHttpClient().newBuilder()
                     .addInterceptor(BasicAuthInterceptor(context))
                     .connectTimeout(60, TimeUnit.SECONDS)
