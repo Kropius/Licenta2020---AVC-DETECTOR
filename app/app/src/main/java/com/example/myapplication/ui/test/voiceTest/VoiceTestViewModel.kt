@@ -22,9 +22,12 @@ class VoiceTestViewModel(application: Application) : AndroidViewModel(applicatio
     val context: Context = getApplication()
     var textId: Int? = null
     var text: String? = null
+
     var voiceListener: VoiceTestListener? = null
-    var voiceListenerSender:VoiceTestSender?=null
-    var recordingUri:String?=null
+    var voiceListenerSender: VoiceTestSender? = null
+
+    var recordingText: String? = null
+    var textRecordingFlag: Boolean? = null
     public fun getTextReq(view: View) {
         voiceListener!!.onStarted()
         Coroutines.main {
@@ -33,35 +36,39 @@ class VoiceTestViewModel(application: Application) : AndroidViewModel(applicatio
 
                 text = textResponse.body()!!.text
                 textId = textResponse.body()!!.id
-                voiceListener!!.onSuccess(text!!)
+                voiceListener!!.onSuccess(text!!, textId.toString())
 
             } else {
                 voiceListener!!.onFailure("Failure, try again!")
             }
         }
     }
-    public fun sendRecording(view:View){
-        voiceListenerSender!!.onStartedSending("Starting to send the registration!")
-        if(text.isNullOrEmpty()||textId == null){
-            voiceListenerSender!!.onFailureSending("Text is empty. Please refresh the text!")
-        }
-        if(recordingUri.isNullOrEmpty()){
-            voiceListenerSender!!.onFailureSending("Record the text, and then send it")
-        }
-        Coroutines.main{
-            val file = File(recordingUri!!)
-            Log.i("Info","dumnezeule"+file.toString())
-            val requestFile: RequestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file)
-            val requestRecording = MultipartBody.Part.createFormData("recording", file.name, requestFile)
-            val id_text_part:RequestBody = RequestBody.create(MediaType.parse("text/plain"),textId!!.toString())
-            val response:Response<voiceResponse>
-            response = ParseVoiceRepository().sendVoice(getTokens(context),context,requestRecording,id_text_part)
-            if(response.isSuccessful){
-                Toast.makeText(context,response.body()!!.response,Toast.LENGTH_LONG).show()
 
-            }
-            else{
-                Toast.makeText(context, "Error",Toast.LENGTH_LONG).show()
+    public fun sendRecording(view: View) {
+        voiceListenerSender!!.onStartedSending("Starting to send the registration!")
+        if (text.isNullOrEmpty() || textId == null) {
+            voiceListenerSender!!.onFailureSending("Text is empty. Please refresh the text!")
+            return
+        }
+        if (recordingText.isNullOrEmpty()) {
+            voiceListenerSender!!.onFailureSending("Record the text, and then send it")
+            return
+        }
+        if(textRecordingFlag == false){
+            voiceListenerSender!!.onFailureSending("Please give us a proper recording!")
+            return
+        }
+        Coroutines.main {
+
+            var response: Response<voiceResponse> = ParseVoiceRepository().sendVoiceText(getTokens(context), context, recordingText!!, textId.toString())
+
+            if (response.isSuccessful) {
+                voiceListenerSender!!.onSuccessSending(response.body()!!.response)
+                //Toast.makeText(context, response.body()!!.response, Toast.LENGTH_LONG).show()
+
+            } else {
+                voiceListenerSender!!.onFailureSending("Error")
+                //Toast.makeText(context, "Error", Toast.LENGTH_LONG).show()
             }
         }
     }

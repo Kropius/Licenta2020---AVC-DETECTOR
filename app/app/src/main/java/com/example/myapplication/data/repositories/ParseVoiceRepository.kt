@@ -8,7 +8,7 @@ import okhttp3.RequestBody
 import retrofit2.Response
 
 class ParseVoiceRepository {
-    suspend fun sendVoice(token: String, context: Context, file: MultipartBody.Part, id_text: RequestBody): Response<voiceResponse> {
-        return MyApi(context).sendVoice(token, file, id_text)
+    suspend fun sendVoiceText(token: String, context: Context, text:String, id_text: String): Response<voiceResponse> {
+        return MyApi(context).sendVoiceText(token, id_text, text)
     }
 }

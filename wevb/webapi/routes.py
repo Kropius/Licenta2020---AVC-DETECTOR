@@ -8,7 +8,7 @@ from webapi.detection.take_decision import builder
 # from webapi.functionalities import calculate_user_data
 from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity, create_refresh_token, \
     jwt_refresh_token_required, JWTManager, get_raw_jwt_header, get_raw_jwt
-
+from webapi.functionalities import save_photo
 import random, os, json
 
 
@@ -58,13 +58,14 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == "POST":
+        print(request.files)
         preprocessator = PreprocessData()
         username = request.form['username']
         password = request.form['password']
         email = request.form['email']
         image = request.files['normal_photo']
         smiling_image = request.files['smiling_photo']
-        recording = request.files['recording']
+        recording = request.form['recording_text']
         recording_id_text = request.form['recording_id_text']
         typed_text = request.form['typed_text']
         typed_text_id = request.form['typed_text_id']
@@ -87,12 +88,11 @@ def register():
             image.save(normal_path)
             smiling_path = save_photo('webapi/static/base_smiling_photos', smiling_image.filename)
             smiling_image.save(smiling_path)
-            recording_path = save_photo('webapi/static/normal_recordings', recording.filename)
-            recording.save(recording_path)
+
             # type_test = TypingTest(total_letters = )
             NormalPhoto(photo_name=normal_path, photo_size=0, user_id=user.id).save_to_db()
             SmilingPhoto(photo_name=smiling_path, photo_size=0, user_id=user.id).save_to_db()
-            RecordingTest(recording_name=recording_path, id_text=recording_id_text,
+            RecordingTest(recording_text=recording, id_text=recording_id_text,
                           user_id=user.id).save_to_db()
             TypingTest(total_letters=data[1], mistakes=data[0], user_id=user.id).save_to_db()
     return jsonify({"success": "You have successfully registered!"})
@@ -165,6 +165,24 @@ def get_text():
     return jsonify({"id": id, "text": text})
 
 
+@app.route("/parsevoice", methods= ['GET','POST'])
+@jwt_required
+def parseVoice():
+    if request.method == "POST":
+        preprocess = PreprocessData()
+        calculator = builder()
+        id_text = int(request.form.getlist('recording_id_text')[0])
+        text = (request.form.getlist('text')[0])
+        user = User.query.filter_by(username=get_jwt_identity()).first()
+
+        preprocess.write_recording_data(user,text,id_text)
+        score = calculator.detect_speech_abnormalities(user.username)
+        if score>5:
+            return jsonify({'response':'Call 911'})
+        else:
+            return jsonify({'response':'Speech ok!'})
+    return 'Unauthorized'
+
 @app.route('/parse_voice', methods=['GET', 'POST'])
 @jwt_required
 def parse_voice():
@@ -214,7 +232,9 @@ def send_texting_test():
         user = User.query.filter_by(username=get_jwt_identity()).first()
         preprocess.write_texting_data(user, input_text, id_text)
         score = calculator.detect_typing_abnormalities(user.username)
-        return jsonify("Text parsed")
+        if score>10:
+            return jsonify({"response":"Call 911"})
+        return jsonify({"response":"Arms ok!"})
     return "Request unauthorized"
 
 

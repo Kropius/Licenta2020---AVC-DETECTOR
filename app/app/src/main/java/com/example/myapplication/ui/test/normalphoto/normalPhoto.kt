@@ -95,6 +95,14 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
     }
 
     public fun startCamera(view: View) {
+        val permission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            Log.i("Info", "Permission to use camera denied")
+            makeRequest(Manifest.permission.CAMERA, CAMERA_PERMISSION_REQUEST_CODE)
+        } else {
+            Log.i("Info", "Permission given!")
+        }
+
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
             // Ensure that there's a camera activity to handle the intent
             takePictureIntent.resolveActivity(packageManager)?.also {

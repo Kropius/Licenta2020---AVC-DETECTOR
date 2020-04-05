@@ -18,6 +18,8 @@
     <string name="title_activity_smiling_photo">Second Step</string>
     <string name="guide_smiling_photo">Take a photo of your face smiling as wide as you can</string>
     <string name="title_activity_voice_test">Third Step</string>
+    <string name="title_activity_texting_test">Last Step</string>
+    <string name="explain">The text that you need to spell is underneath.</string>
     <string name="guide_voice_test">Here is the text you need to spell and record.</string>
     <string name="start_record">Start Recording.</string>
     <string name="start_listening">Start Listening</string>
@@ -26,6 +28,10 @@
     <string name="listen_record">Listen Recording</string>
     <string name="error">Error getting the text. Please refresh the text.</string>
     <string name="refresh">Refresh Text</string>
+    <string name="saidText">Here we will display the text that you said, or any error that occurred.</string>
+    <string name="typing_text_text_typed">Here we will display the text that you typed</string>
+    <string name="get_results">Get Results</string>
+    <string name="add_text">Set Text</string>
 
 
 </resources>

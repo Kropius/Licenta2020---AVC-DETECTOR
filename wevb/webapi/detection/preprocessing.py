@@ -45,6 +45,8 @@ class PreprocessData:
 
     def check_slurred_speech(self, wav_text, id_text):
         # aflam ceea ce trebuia sa zica folosind
+        # lista = conn.execute("select * from texts").fetchall()
+        # print(lista)
         text = conn.execute("select text from texts where id = (?)", (id_text,)).fetchone()[0]
         return self.compare_two_texts(wav_text, text)
 
@@ -53,9 +55,13 @@ class PreprocessData:
         text_said = text_said.split(' ')
         original_text = original_text.split(' ')
         mistakes = 0
+
+        i=0
         for i in range(min(len(original_text), len(text_said))):
             if text_said[i] != original_text[i]:
                 mistakes += 1
+
+        mistakes+=len(original_text[i+1:])+len(text_said[i+1:])
         return mistakes
 
     def check_similarity(self, original_text_id, input_text):
@@ -138,7 +144,6 @@ class PreprocessData:
     def build_input_from_photo(self, array_of_coordinates):
         array_of_coordinates = {x: y for i in array_of_coordinates for x, y in i.items()}
         output = dict()
-        print(array_of_coordinates)
         mounth = self.prepare_mouth(array_of_coordinates['mouth'][:12])
         left_eye = array_of_coordinates['left_eye']
         right_eye = array_of_coordinates['right_eye']
@@ -165,7 +170,6 @@ class PreprocessData:
     def write_mouth_eyes_data_tojson(self, userdb, path_received_image):
         # print(userdb.normal_photo.photo_name)
 
-        print(path_received_image)
         create_json_file(userdb.username + "now")
         now_data = self.return_face_parts(path_received_image)
         calculator = builder()
@@ -204,9 +208,10 @@ class PreprocessData:
         write_data("smiling_data", smiling_data, userdb.username + "db")
 
     def write_recording_data(self, userdb, recording_path, id_text):
+        # print(recording_path)
         now_data = self.check_slurred_speech(recording_path, id_text)
         write_data("speech_mistakes", now_data, userdb.username + "now")
-        db_data = self.check_slurred_speech(userdb.recording.recording_name, userdb.recording.id_text)
+        db_data = self.check_slurred_speech(userdb.recording.recording_text, userdb.recording.id_text)
         write_data("speech_mistakes", db_data, userdb.username + "db")
 
     def write_texting_data(self, userdb, input_text, id_text):
@@ -240,7 +245,6 @@ class PreprocessData:
         parsed_data['lower_point'] = normal_photo['lower_most_point']
         parsed_data['upper_point_smiling'] = smiling_photo["upper_most_point_smiling"]
         parsed_data['lower_point_smiling'] = smiling_photo["lower_most_point_smiling"]
-        print(parsed_data)
         return parsed_data
 
     def parse_json_data(self, user):

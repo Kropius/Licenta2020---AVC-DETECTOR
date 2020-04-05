@@ -42,16 +42,16 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
+        app:layout_constraintVertical_bias="0.218" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="347dp"
         android:layout_height="84dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginBottom="220dp"
+        android:layout_marginBottom="324dp"
         android:fontFamily="@font/carter_one"
         android:text="@string/guide_voice_test"
         android:textAlignment="center"
@@ -59,8 +59,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textToSpeech" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/startRecording"
@@ -72,10 +71,10 @@
         android:text="@string/start_record"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintHorizontal_bias="0.016"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.834" />
+        app:layout_constraintVertical_bias="0.961" />
 
     <Button
         android:id="@+id/refreshButton"
@@ -83,31 +82,15 @@
         android:layout_height="75dp"
         android:background="@drawable/my_buton"
         android:fontFamily="@font/carter_one"
-        android:text="@string/refresh"
         android:onClick="@{viewmodel.getTextReq}"
+        android:text="@string/refresh"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.986"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.834" />
-
-    <Button
-        android:id="@+id/startListening"
-        android:layout_width="111dp"
-        android:layout_height="75dp"
-        android:background="@drawable/my_buton"
-        android:fontFamily="@font/carter_one"
-        android:onClick="startStopPlaying"
-        android:text="@string/start_listening"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.976"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.834" />
+        app:layout_constraintVertical_bias="0.961" />
 
     <Button
         android:id="@+id/nextButton"
@@ -126,7 +109,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.963" />
 
-
+    <TextView
+        android:id="@+id/saidText"
+        android:layout_width="359dp"
+        android:layout_height="128dp"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/saidText"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.699" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
