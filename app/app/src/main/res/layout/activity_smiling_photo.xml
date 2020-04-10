@@ -15,24 +15,9 @@
         android:id="@+id/mySmilingPhoto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/linear"
+        android:background="@drawable/two_color_background"
         tools:context=".ui.test.smilingphoto.smilingPhoto">
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="240dp"
-            android:layout_height="48dp"
-            android:fontFamily="@font/carter_one"
-            android:text="@string/title_activity_smiling_photo"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.023" />
 
         <ImageView
             android:id="@+id/mySmilingImageView"
@@ -43,83 +28,159 @@
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.192"
-            app:srcCompat="@drawable/smile" />
+            app:layout_constraintVertical_bias="0.238"
+            app:srcCompat="@drawable/profile_pc" />
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="286dp"
-            android:layout_height="118dp"
-            android:fontFamily="@font/carter_one"
-            android:text="@string/guide_smiling_photo"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="24sp"
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:layout_marginTop="11dp"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.866"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.706" />
+            app:layout_constraintTop_toBottomOf="@+id/mySmilingImageView"
+            app:layout_constraintVertical_bias="1.0">
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="149dp"
-            android:layout_height="53dp"
-            android:background="@drawable/my_buton"
-            android:fontFamily="@font/carter_one"
-            android:onClick="startGallerySmiling"
-            android:text="@string/gallery"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.938"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.845" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="149dp"
-            android:layout_height="53dp"
-            android:background="@drawable/my_buton"
-            android:fontFamily="@font/carter_one"
-            android:onClick="startCameraSmiling"
-            android:text="@string/camera"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.061"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.845" />
+                <ImageView
+                    android:layout_width="168dp"
+                    android:layout_height="153dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:rotation="320"
+                    android:src="@drawable/resize_camera">
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="172dp"
-            android:layout_height="41dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/my_buton"
-            android:fontFamily="@font/carter_one"
-            android:text="@string/next"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="24sp"
-            android:onClick="@{viewmodel.onNextButtoClickSmiling}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.451"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+                </ImageView>
+
+                <LinearLayout
+                    android:layout_width="233dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/carter_one"
+                        android:text="@string/title_activity_smiling_photo"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="35sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.461"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.563" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="99dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/carter_one"
+                        android:text="@string/guide_smiling_photo"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="149dp"
+                    android:layout_height="53dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_buton"
+                    android:fontFamily="@font/carter_one"
+                    android:onClick="startGallerySmiling"
+                    android:text="@string/gallery"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.938"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.845"
+                    android:layout_marginBottom="10dp"
+                    />
+
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="149dp"
+                    android:layout_height="53dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_buton"
+                    android:fontFamily="@font/carter_one"
+                    android:onClick="startCameraSmiling"
+                    android:text="@string/camera"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.061"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.845" />
+            </LinearLayout>
+
+            <Button
+
+                android:id="@+id/nextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#49A19A"
+                android:fontFamily="@font/carter_one"
+                android:onClick="@{viewmodel.onNextButtoClickSmiling}"
+                android:text="@string/next"
+                android:textAlignment="center"
+                android:textColor="#8B4FB6"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.451"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+        </LinearLayout>
+
         <ProgressBar
-            android:visibility="invisible"
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
+            android:visibility="invisible"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -10,120 +10,173 @@
             type="com.example.myapplication.ui.test.voiceTest.VoiceTestViewModel" />
     </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.test.voiceTest.voiceTest"
-    android:background="@drawable/linear">
+    android:background="@drawable/linear"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#F8F2D2"
+        >
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="191dp"
-        android:layout_height="55dp"
-        android:fontFamily="@font/carter_one"
-        android:text="@string/title_activity_voice_test"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.066" />
+        <ImageView
+            android:layout_width="342dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/speaking_resizable" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/textToSpeech"
-        android:layout_width="327dp"
-        android:layout_height="190dp"
-        android:text="In order to get the text that you need to spell, press REFRESH TEXT"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/carter_one"
+                android:text="@string/title_activity_voice_test"
+                android:textAlignment="center"
+                android:textColor="#DE6D43"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.525"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.066" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="347dp"
-        android:layout_height="84dp"
-        android:layout_marginBottom="324dp"
-        android:fontFamily="@font/carter_one"
-        android:text="@string/guide_voice_test"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="123dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/carter_one"
+                android:text="The text that you need to spell is underneath"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/startRecording"
-        android:layout_width="111dp"
-        android:layout_height="75dp"
-        android:background="@drawable/my_buton"
-        android:fontFamily="@font/carter_one"
-        android:onClick="startStopRecording"
-        android:text="@string/start_record"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.016"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
 
-    <Button
-        android:id="@+id/refreshButton"
-        android:layout_width="111dp"
-        android:layout_height="75dp"
-        android:background="@drawable/my_buton"
-        android:fontFamily="@font/carter_one"
-        android:onClick="@{viewmodel.getTextReq}"
-        android:text="@string/refresh"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.986"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#819975">
+
+        <TextView
+            android:id="@+id/textToSpeech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/carter_one"
+            android:text="In order to get the text that you need to spell, press REFRESH TEXT"
+            android:textAlignment="center"
+            android:textColor="#424846"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.619"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.218" />
+
+        <Button
+            android:id="@+id/refreshText"
+            android:layout_width="160dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/my_buton"
+            android:drawableLeft="@drawable/button_refresh"
+            android:fontFamily="@font/carter_one"
+            android:gravity="center"
+            android:onClick="@{viewmodel.getTextReq}"
+            android:paddingLeft="10dp"
+            android:text="@string/refresh"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#DE6D43">
+        <TextView
+            android:id="@+id/saidText"
+            android:layout_width="match_parent"
+            android:layout_height="121dp"
+            android:fontFamily="@font/carter_one"
+            android:text="@string/saidText"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.699"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/startRecording"
+            android:layout_width="160dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:background="@drawable/my_buton"
+            android:fontFamily="@font/carter_one"
+            android:onClick="startStopRecording"
+            android:text="@string/start_record"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.016"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.961"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+
+
 
     <Button
         android:id="@+id/nextButton"
-        android:layout_width="136dp"
-        android:layout_height="40dp"
-        android:background="@drawable/my_buton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:fontFamily="@font/carter_one"
-        android:text="@string/next"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
+        android:background="#424846"
         android:onClick="@{viewmodel.sendRecording}"
+        android:text="@string/next"
+        android:textColor="#819975"
+        android:textSize="54sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963" />
-
-    <TextView
-        android:id="@+id/saidText"
-        android:layout_width="359dp"
-        android:layout_height="128dp"
-        android:fontFamily="@font/carter_one"
-        android:text="@string/saidText"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699" />
+        app:layout_constraintVertical_bias="0.963"
+        android:layout_weight="1"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
 </layout>

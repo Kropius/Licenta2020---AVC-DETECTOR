@@ -120,8 +120,8 @@ class smilingPhoto : AppCompatActivity(),SmilingPhotoListener {
             var myImg = findViewById<ImageView>(R.id.mySmilingImageView)
             myImg.setImageBitmap(myBitMap)
             val layoutParams = myImg.getLayoutParams();
-            layoutParams.width = 1400;
-            layoutParams.height = 700;
+            layoutParams.width = 1200;
+            layoutParams.height = 600;
             myImg.setLayoutParams(layoutParams);
             viewModel!!.photoUri = currentPhotoPath
 

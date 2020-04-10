@@ -10,69 +10,74 @@
             type="com.example.myapplication.ui.test.typingTest.TypingTestViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F7C66C"
+        android:orientation="vertical"
         tools:context=".ui.test.typingTest.typingTest">
 
-        <Button
-            android:id="@+id/getResultsButton"
-            android:layout_width="125dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="28dp"
-            android:background="@drawable/my_buton"
-            android:fontFamily="@font/carter_one"
-            android:onClick="@{viewmodel.sendText}"
-            android:text="@string/get_results"
-            android:textColor="@color/colorAccent"
-
-            android:textSize="15dp"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EBB92C"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.445"
+            app:layout_constraintHorizontal_bias="0.409"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.956"
-            android:drawablePadding="30dp"/>
+            app:layout_constraintVertical_bias="0.00"
+            android:layout_weight="1">
 
-        <Button
-            android:id="@+id/enterTextButton"
-            android:layout_width="107dp"
-            android:layout_height="47dp"
-            android:background="@drawable/my_buton"
-            android:fontFamily="@font/carter_one"
-            android:onClick="setText"
-            android:text="@string/add_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.052"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.956" />
+            <ImageView
+                android:layout_width="194dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/writing"
+                android:layout_marginLeft="10dp">
 
-        <TextView
-            android:id="@+id/typedText"
-            android:layout_width="373dp"
-            android:layout_height="139dp"
+            </ImageView>
 
-            android:fontFamily="@font/carter_one"
-            android:text="@string/typing_text_text_typed"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.421"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.658" />
+            <LinearLayout
+                android:layout_width="245dp"
+                android:layout_height="209dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="216dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/carter_one"
+                    android:text="@string/title_activity_texting_test"
+                    android:textAlignment="center"
+                    android:textColor="#56DED3"
+                    android:textSize="44sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="137dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/carter_one"
+                    android:text="@string/explain"
+                    android:textAlignment="center"
+                    android:textSize="24sp">
+
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:layout_weight="1"
             android:background="#FF7E00"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -86,15 +91,17 @@
             <TextView
                 android:id="@+id/textReceived"
                 android:layout_width="match_parent"
-                android:layout_height="102dp"
+                android:layout_height="128dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
-                android:layout_weight="2"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
                 android:fontFamily="@font/carter_one"
                 android:gravity="center"
                 android:text="In order to get the text that you need to spell, press REFRESH TEXT"
                 android:textAlignment="center"
-                android:textColor="#120000"
-                android:textSize="20dp"
+                android:textColor="#424846"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <Button
@@ -103,8 +110,9 @@
                 android:layout_height="51dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/my_buton"
                 android:drawableLeft="@drawable/button_refresh"
@@ -115,80 +123,102 @@
                 android:text="@string/refresh" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/editTextTyped"
-            android:layout_width="371dp"
-            android:layout_height="86dp"
-
-            android:ems="10"
-
-            android:hint="Enter your sentence here"
-            android:inputType="textCapSentences|textMultiLine"
-            android:maxLength="2000"
-            android:maxLines="4"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.525"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.751" />
-
-
         <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="410dp"
-            android:layout_height="141dp"
-            android:background="#EBB92C"
-            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#EB2A2A"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.409"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.025">
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+            >
 
-            <ImageView
-                android:layout_width="189dp"
-                android:layout_height="match_parent"
+            <EditText
+                android:id="@+id/editTextTyped"
+                android:layout_width="match_parent"
+                android:layout_height="101dp"
+                android:ems="10"
+                android:fontFamily="@font/carter_one"
+                android:hint="Enter your sentence here"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="2000"
+                android:maxLines="4"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.525"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.751"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/enterTextButton"
+                android:layout_width="162dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/writing">
-
-            </ImageView>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="216dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/carter_one"
-                    android:text="@string/title_activity_texting_test"
-                    android:textAlignment="center"
-                    android:textColor="#56DED3"
-                    android:textSize="38dp">
-
-                </TextView>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="84dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/carter_one"
-                    android:text="@string/explain"
-                    android:textAlignment="center"
-                    android:textSize="18dp">
-
-                </TextView>
-            </LinearLayout>
+                android:background="@drawable/my_buton"
+                android:fontFamily="@font/carter_one"
+                android:onClick="setText"
+                android:text="@string/add_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
         </LinearLayout>
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#940202"
+            android:layout_weight="1"
+            >
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/typedText"
+                android:layout_width="match_parent"
+                android:layout_height="101dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/carter_one"
+                android:text="@string/typing_text_text_typed"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.578"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.913"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/getResultsButton"
+                android:layout_width="160dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center"
+                android:background="@drawable/my_buton"
+                android:fontFamily="@font/carter_one"
+                android:onClick="@{viewmodel.sendText}"
+                android:text="@string/get_results"
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="20dp"
+                android:drawableLeft="@drawable/marked_resized"
+                android:paddingLeft="10dp"
+
+
+/>
+        </LinearLayout>
+    </LinearLayout>
 </layout>

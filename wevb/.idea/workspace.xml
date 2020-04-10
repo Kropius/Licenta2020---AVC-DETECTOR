@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb62000-da61-4e8c-8fb1-524403c22849" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/typingTest/typingTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_typing_test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/data/db/AppDatabase.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/data/db/entities/User.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/data/network/MyApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/data/network/MyApi.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/data/repositories/ParseVoiceRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/data/repositories/ParseVoiceRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/normalphoto/normalPhoto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/normalphoto/normalPhoto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/voiceTest/VoiceTestListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/voiceTest/VoiceTestListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/voiceTest/VoiceTestViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/voiceTest/VoiceTestViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/voiceTest/voiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/voiceTest/voiceTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/symptoms/Symptoms.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/symptoms/Symptoms.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_symptoms.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_symptoms.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_typing_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_typing_test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_voice_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_voice_test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/detection/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/detection/preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/json_files/Kropiusdb.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/json_files/Kropiusdb.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/json_files/Kropiusnow.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/json_files/Kropiusnow.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/site.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -441,7 +428,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20389885" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.100105375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -663,6 +650,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropiusnow.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="263" selection-start-column="263" selection-end-column="263" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropiusdb.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -688,13 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16300">
           <caret line="664" selection-start-line="664" selection-end-line="664" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropiusnow.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="263" selection-start-column="263" selection-end-column="263" />
         </state>
       </provider>
     </entry>
