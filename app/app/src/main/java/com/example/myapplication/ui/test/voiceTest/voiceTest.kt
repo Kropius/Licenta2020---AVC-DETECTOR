@@ -140,8 +140,8 @@ class voiceTest : AppCompatActivity(), VoiceTestListener, VoiceTestSender {
     public fun startStopRecording(view: View) {
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
         intent.putExtra(
-                RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+                
+                        RecognizerIntent.EXTRA_LANGUAGE, "ro"
         )
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, "voice.recognition.test")
 

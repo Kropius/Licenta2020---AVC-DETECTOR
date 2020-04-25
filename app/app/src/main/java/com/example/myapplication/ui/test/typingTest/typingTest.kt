@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.test.typingTest
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -10,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityTypingTestBinding
+import com.example.myapplication.ui.test.endTest.endTest
 
 class typingTest : AppCompatActivity(), TypingTestListener,TypingTestListenerSender {
     override fun onStartedSender() {
@@ -18,6 +20,7 @@ class typingTest : AppCompatActivity(), TypingTestListener,TypingTestListenerSen
 
     override fun onSuccessSender(string: String) {
         Toast.makeText(this,string,Toast.LENGTH_LONG).show()
+        startActivity(Intent(this,endTest::class.java))
     }
 
     override fun onFailureSender(string: String) {
@@ -44,6 +47,8 @@ class typingTest : AppCompatActivity(), TypingTestListener,TypingTestListenerSen
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        getSupportActionBar()?.hide();
+
         binding = DataBindingUtil.setContentView<ActivityTypingTestBinding>(this, com.example.myapplication.R.layout.activity_typing_test)
         viewModel = ViewModelProviders.of(this).get(TypingTestViewModel::class.java)
         viewModel!!.typingTestListener = this

@@ -53,11 +53,16 @@ interface MyApi {
     suspend fun sendVoiceText(@Header("Bearer") token: String,
                               @Field("recording_id_text") id: String,
                               @Field("text") text: String): Response<voiceResponse>
+
     @FormUrlEncoded
     @POST("send_texting_test")
     suspend fun sendTextingText(@Header("Bearer") token: String,
-                                @Field("id_text") id:String,
-                                @Field("input_text")text:String):Response<textingTestResponse>
+                                @Field("id_text") id: String,
+                                @Field("input_text") text: String): Response<textingTestResponse>
+
+    @POST("send_final_result")
+    suspend fun sendFinalResult(@Header("Bearer") token: String): Response<endTestResponse>
+
     companion object {
         operator fun invoke(context: Context): MyApi {
             val okHttpClient = OkHttpClient().newBuilder()

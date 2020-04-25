@@ -1,40 +1,87 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="register">Register</string>
-    <string name="login">Login</string>
+    <string name="register">Inregistrare</string>
+    <string name="login">Conectare</string>
     <string name="logo">Be Your Own Hero!</string>
-    <string name="password">Password</string>
-    <string name="username">Username</string>
-    <string name="startTest">Start Test NOW</string>
-    <string name="symptoms">Symptoms</string>
-    <string name="map">Avc Centers</string>
-    <string name="logout">Log Out</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="title_activity_normal_photo">First Step</string>
+    <string name="password">Parola</string>
+    <string name="username">Nume</string>
+    <string name="email">Email</string>
+    <string name="startTest">Porneste testul ACUM!</string>
+    <string name="symptoms">Simptome</string>
+    <string name="map">Centre AVC</string>
+    <string name="logout">Deconectare</string>
+    <string name="title_activity_maps">Harta</string>
+    <string name="title_activity_normal_photo">Pasul 1</string>
     <string name="guide_normal_photo">Take a photo of your face</string>
-    <string name="next">Next</string>
+    <string name="next">Urmatorul pas</string>
     <string name="camera">Camera</string>
-    <string name="gallery">Gallery</string>
-    <string name="title_activity_smiling_photo">Second Step</string>
-    <string name="guide_smiling_photo">Take a photo of your face smiling as wide as you can</string>
-    <string name="title_activity_voice_test">Third Step</string>
-    <string name="title_activity_texting_test">Last Step</string>
-    <string name="explain">The text that you need to spell is underneath.</string>
-    <string name="guide_voice_test">Here is the text you need to spell and record.</string>
-    <string name="start_record">Start Recording</string>
+    <string name="gallery">Galerie</string>
+    <string name="title_activity_smiling_photo">Pasul 2</string>
+    <string name="guide_smiling_photo">Fa-ti o fotografie zambind cat de tare poti</string>
+    <string name="title_activity_voice_test">Pasul 3</string>
+    <string name="title_activity_texting_test">Ultimul pas</string>
+    <string name="explain">Textul pe care trebuie sa il reciti se afla chiar dedesubt</string>
+    <string name="guide_voice_test">Acesta este textul pe care trebuie sa il reciti</string>
+    <string name="start_record">Porneste inregistrarea</string>
     <string name="start_listening">Start Listening</string>
     <string name="stop_record">Stop Recording</string>
     <string name="stop_listening">Stop Listening</string>
     <string name="listen_record">Listen Recording</string>
-    <string name="error">Error getting the text. Please refresh the text.</string>
-    <string name="refresh">Refresh Text</string>
-    <string name="saidText">Here we will display the text that you said, or any error that occurred.</string>
-    <string name="typing_text_text_typed">Here we will display the text that you typed</string>
-    <string name="get_results">Get Results</string>
-    <string name="add_text">Set Text</string>
+    <string name="error">Eroare la actualizarea textului. Apasa Reimprospateaza textul</string>
+    <string name="refresh">Reimprospateaza textul</string>
+    <string name="saidText">Aici vom afisa textul pe care chiar tu l-ai recitat, sau orice alta eroare.</string>
+    <string name="typing_text_text_typed">Aici vom afisa textul pe care tu l-ai tastat.</string>
+    <string name="get_results">Rezultate</string>
+    <string name="add_text">Afiseaza text</string>
+    <string name ="weakness_title">Slabiciune musculara</string>
+    <string name ="weakness_explanantion">...sau incapacitatea de a face o actiune</string>
+    <string name ="clinical_weakness_title">Simptomele slabiciunii musculare</string>
+    <string name ="clinical_weakness_explanantion">...nu o confunda cu slabiciunea perceputa</string>
+    <string name="clinical_weakness_signs_first">\u2022 Poti sa iti ridici mainile?\n\u2022 Poti sa le mentii ridicate?\n\u2022 Poti sa mergi pe calcaie??\n\u2022 Poti sa mergi pe varfuri?</string>
+
+    <string name ="perceived_weakness_title">Simptomele slabiciunii percepute</string>
+    <string name ="perceived_weakness_explanantion">..poti sa faci orice\n...dar te simti doar obosit</string>
+    <string name="perceived_weakness_signs_first">\u2022 Poti sa faci o flotare?\n\u2022 Poti sa faci o genuflexiune?\n\u2022 Poti sa iti ridici picioarele?</string>
+
+
+
+    <string name="face_dropping_title">Asimetrie faciala</string>
+    <string name="face_dropping_subtitle">...sau incapabilitatea de a zambi</string>
+    <string name="face_dropping_symptoms">Simptomele asimetriei faciale</string>
+    <string name="face_dropping_symptoms_list">\u2022 Poti sa zambesti?\n\u2022 Crezi ca fata ta este asimetrica?\n\u2022 Iti este coltul gurii lasat in jos?\n\u2022 Este unul din ochii tai lasat in jos?</string>
+    <string name="face_dropping_questions1">Arata fata ta asa?</string>
+    <string name="face_dropping_questions2">..sau asa?</string>
+
+    <string name="speech_problems_title">Probleme de vorbire</string>
+    <string name="speech_problems_subtitle">Pot intelege persoanele din jurul tau ceea ce spui?</string>
+    <string name="speech_problems_symptom">Simptomele problemelor de vorbire</string>
+    <string name="speech_problems_symptoms_list">\u2022 Poti sa vorbesti?\n\u2022 Prietenii tai inteleg ceea ce spui?\n\u2022 Tu ii intelegi pe ei?\n\u2022 Cat face 65-38?\n\u2022 Este vorbirea ta greoaie?\n\u2022 Poti sa vorbesti tare?</string>
+
+    <string name="fast_title">Formula F.A.S.T.</string>
+    <string name="fast_explained1">\u2022 F(Fata) - Asimetrie faciala</string>
+    <string name = "fast_explained2">\u2022 A(Brate) - Slabiciune musculara</string>
+    <string name="fast_explained3">\u2022 S(Vorbire) - Probleme de vorbire</string>
+    <string name="fast_explained4">\u2022 T(Timp) - Timpul sa suni!</string>
+    <string name="fast_advice">Daca ai macar unul din simptome..</string>
+
+    <string name="call911">Suna la 112</string>
+    <string name="call_a_friend">Suna un prieten!</string>
+
+    <string name="end_test_verdict_good">Este foarte probabil ca tu sa ai un AVC</string>
+    <string name="end_test_verdict_bad">Este foarte putin probabil ca tu sa ai un AVC</string>
+
+    <string name="end_test_good">Esti bine!</string>
+    <string name="end_test_bad">Ceva nu este in regula!</string>
+
+    <string name="advice_good">\u2022 Calmeaza-te!\n\u2022 Inspira adanc!\n\u2022 Suna un prieten!</string>
+    <string name="advice_bad">\u2022 Calmeaza-te!\n\u2022 Inspira adanc!\n\u2022 SUNA LA 112!</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="register_title">Inregistrare</string>
+    <string name="register_subtitle">Creati-va un cont nou!</string>
+
 
 
 </resources>

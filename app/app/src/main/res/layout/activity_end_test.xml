@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.myapplication.ui.test.endTest.EndTestViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.test.endTest.endTest">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/linear"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.544">
+
+            <TextView
+                android:id="@+id/verdict"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#F8F2D2"
+                android:fontFamily="@font/carter_one"
+                android:text="@string/end_test_good"
+                android:textAlignment="center"
+                android:textColor="#424846"
+                android:textSize="54sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="206dp"
+                    android:layout_weight="1"
+                    android:background="#819975"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/happy_brain" />
+
+                    <TextView
+                        android:id="@+id/verdict_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/carter_one"
+                        android:text="@string/end_test_verdict_good"
+                        android:textAlignment="center"
+                        android:textSize="28sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#DE6D43"
+                android:fontFamily="@font/carter_one"
+                android:text="@string/advice_good"
+                android:textAlignment="center"
+                android:textColor="#424846"
+                android:textSize="28dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:id="@+id/verdict_call"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#F8F2D2"
+                android:fontFamily="@font/carter_one"
+                android:text="@string/call_a_friend"
+                android:textColor="#424846"
+                android:textSize="34sp" />
+
+            <Button
+                android:id="@+id/homeButton"
+                android:layout_width="match_parent"
+                android:layout_height="69dp"
+                android:layout_weight="1"
+                android:background="#424846"
+                android:fontFamily="@font/carter_one"
+                android:text="Meniul principal"
+                android:onClick="goHome"
+                android:textAlignment="center"
+                android:textColor="#DE6D43"
+                android:textSize="34sp" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

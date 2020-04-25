@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.chirag.slidingtabsusingviewpager.Symptoms
 import com.example.myapplication.ui.map.Maps
-import com.example.myapplication.ui.symptoms.Symptoms
 import com.example.myapplication.ui.test.normalphoto.normalPhoto
 
 
@@ -23,7 +23,7 @@ class home : AppCompatActivity() {
         startActivity(Intent(this,normalPhoto::class.java))
     }
     fun seeSymptoms(view:View){
-        startActivity(Intent(this,Symptoms::class.java))
+        startActivity(Intent(this, Symptoms::class.java))
     }
     fun seeMap(view:View){
         startActivity(Intent(this, Maps::class.java))

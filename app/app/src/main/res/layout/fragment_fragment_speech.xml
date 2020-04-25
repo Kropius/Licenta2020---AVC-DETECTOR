@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.symptoms.ArmWeakness">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fcf8f3"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="138dp"
+                android:layout_height="141dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/slurredspeech" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/carter_one"
+                    android:text="@string/speech_problems_title"
+                    android:textColor="#698474"
+                    android:textSize="28sp"
+                    android:textAlignment="center">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/carter_one"
+                    android:text="@string/speech_problems_subtitle"
+                    android:textAlignment="center"
+                    android:textColor="#698474">
+
+                </TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:background="#ffaaa5"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/speech_problems_symptom"
+                android:fontFamily="@font/carter_one"
+                android:textColor="#698474"
+                android:textAlignment="center"
+                android:textSize="28sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/carter_one"
+                android:text="@string/speech_problems_symptoms_list"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:textColor="#698474"
+                android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:background="#698474">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fast_title"
+            android:textAlignment="center"
+            android:textSize="35dp"
+            android:fontFamily="@font/carter_one"
+            android:textColor="#fcf8f3"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fast_explained1"
+                    android:fontFamily="@font/carter_one"
+                    android:textAlignment="center"
+                    />
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fast_explained2"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/carter_one"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fast_explained3"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/carter_one"
+                    />
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fast_explained4"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/carter_one"
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fast_advice"
+                android:textAlignment="center"
+                android:fontFamily="@font/carter_one"
+                android:layout_marginBottom="10dp"
+                android:textSize="20dp"/>
+            <Button
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/call911"
+                android:textSize="30sp"
+                android:fontFamily="@font/carter_one"
+                android:textColor="#FF0000"
+                android:background="#fcf8f3"
+                />
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

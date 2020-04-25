@@ -9,117 +9,146 @@
             name="viewmodel"
             type="com.example.myapplication.ui.test.normalphoto.NormalPhotoViewModel" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/linear"
+        android:background="@drawable/two_color_background"
         tools:context=".ui.test.normalphoto.normalPhoto">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="68dp"
-            android:background="@drawable/my_buton"
-            android:fontFamily="@font/carter_one"
-            android:onClick="startCamera"
-            android:text="@string/camera"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.822" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="68dp"
-            android:background="@drawable/my_buton"
-            android:fontFamily="@font/carter_one"
-            android:text="@string/gallery"
-            android:onClick="startGallery"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.822" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="182dp"
-            android:layout_height="47dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/my_buton"
-            android:fontFamily="@font/carter_one"
-            android:text="@string/next"
-            android:textColor="#FF0000"
-            android:textSize="24sp"
-            android:onClick="@{viewmodel.onNextButtoClick}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.535"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.941" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="371dp"
-            android:layout_height="86dp"
-            android:fontFamily="@font/carter_one"
-            android:gravity="center_horizontal"
-            android:text="@string/guide_normal_photo"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.768" />
 
         <ImageView
             android:id="@+id/myPhoto"
-            android:layout_width="382dp"
-            android:layout_height="277dp"
+            android:layout_width="266dp"
+            android:layout_height="262dp"
+            android:layout_marginBottom="372dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.482"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.268"
-            app:srcCompat="@drawable/face" />
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/profile_pc" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="279dp"
-            android:layout_height="51dp"
-            android:fontFamily="@font/carter_one"
-            android:text="@string/title_activity_normal_photo"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="30sp"
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.866"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.061" />
+            app:layout_constraintTop_toBottomOf="@+id/myPhoto"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/carter_one"
+                android:text="@string/title_activity_normal_photo"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.061" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/carter_one"
+                android:gravity="center_horizontal"
+                android:text="@string/guide_normal_photo"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.768" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:background="@drawable/my_buton"
+                    android:fontFamily="@font/carter_one"
+                    android:onClick="startCamera"
+                    android:text="@string/camera"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.822"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="20dp"/>
+
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/button2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="38dp"
+                    android:background="@drawable/my_buton"
+                    android:fontFamily="@font/carter_one"
+                    android:onClick="startGallery"
+                    android:text="@string/gallery"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.822"
+                    android:layout_marginStart="20dp"/>
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="40dp"
+                android:layout_weight="1"
+                android:background="#49A19A"
+                android:fontFamily="@font/carter_one"
+                android:onClick="@{viewmodel.onNextButtoClick}"
+                android:text="@string/next"
+                android:textColor="#8B4FB6"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.535"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.941" />
+
+
+        </LinearLayout>
 
         <ProgressBar
-            android:visibility="invisible"
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
+            android:visibility="invisible"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

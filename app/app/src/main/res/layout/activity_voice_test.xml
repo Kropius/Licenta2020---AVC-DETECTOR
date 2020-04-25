@@ -59,9 +59,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:fontFamily="@font/carter_one"
-                android:text="The text that you need to spell is underneath"
+                android:text="@string/explain"
                 android:textAlignment="center"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
 
@@ -81,7 +81,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:fontFamily="@font/carter_one"
-            android:text="In order to get the text that you need to spell, press REFRESH TEXT"
+            android:text="Pentru a obtine textul pe care trebuie sa il reciti, te rugam apasa REIMPROSPATEAZA TEXT"
             android:textAlignment="center"
             android:textColor="#424846"
             android:textSize="24sp"
@@ -94,7 +94,7 @@
 
         <Button
             android:id="@+id/refreshText"
-            android:layout_width="160dp"
+            android:layout_width="201dp"
             android:layout_height="51dp"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
@@ -108,8 +108,7 @@
             android:gravity="center"
             android:onClick="@{viewmodel.getTextReq}"
             android:paddingLeft="10dp"
-            android:text="@string/refresh"
-            />
+            android:text="@string/refresh" />
 
     </LinearLayout>
 
@@ -166,7 +165,7 @@
         android:onClick="@{viewmodel.sendRecording}"
         android:text="@string/next"
         android:textColor="#819975"
-        android:textSize="54sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"

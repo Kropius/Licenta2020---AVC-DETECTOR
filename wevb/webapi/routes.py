@@ -252,7 +252,7 @@ def send_final_result():
         user = User.query.filter_by(username=get_jwt_identity()).first()
         score = calculator.caculate_total_score(user.username)
         if score > 30:
-            return "Call 911"
+            return jsonify({"response":"Call 911"})
         else:
-            return "You are ok! Calm down"
+            return jsonify({"response":"You are ok! Calm down"})
     return "Unauthorized Request"

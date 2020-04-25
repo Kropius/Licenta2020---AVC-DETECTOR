@@ -21,7 +21,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#EBB92C"
+            android:background="#F8F2D2"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -53,8 +53,8 @@
                     android:fontFamily="@font/carter_one"
                     android:text="@string/title_activity_texting_test"
                     android:textAlignment="center"
-                    android:textColor="#56DED3"
-                    android:textSize="44sp">
+                    android:textColor="#DE6D43"
+                    android:textSize="38sp">
 
                 </TextView>
 
@@ -66,7 +66,7 @@
                     android:fontFamily="@font/carter_one"
                     android:text="@string/explain"
                     android:textAlignment="center"
-                    android:textSize="24sp">
+                    android:textSize="21sp">
 
                 </TextView>
             </LinearLayout>
@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
 
             android:layout_weight="1"
-            android:background="#FF7E00"
+            android:background="#DE6D43"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +98,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/carter_one"
                 android:gravity="center"
-                android:text="In order to get the text that you need to spell, press REFRESH TEXT"
+                android:text="Pentru a obtine textul pe care trebuie sa il scrii, te rugam apasa REIMPROSPATEAZA TEXT"
                 android:textAlignment="center"
                 android:textColor="#424846"
                 android:textSize="24sp"
@@ -106,7 +106,7 @@
 
             <Button
                 android:id="@+id/refreshText"
-                android:layout_width="160dp"
+                android:layout_width="201dp"
                 android:layout_height="51dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
@@ -127,7 +127,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#EB2A2A"
+            android:background="#819975"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -178,28 +178,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#940202"
+            android:background="#424846"
             android:layout_weight="1"
             >
 
 
             <TextView
                 android:id="@+id/typedText"
-                android:layout_width="match_parent"
-                android:layout_height="101dp"
+                android:layout_width="399dp"
+                android:layout_height="103dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/carter_one"
                 android:text="@string/typing_text_text_typed"
                 android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="24sp"
+                android:textColor="#DE6D43"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.578"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.913"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginBottom="10dp"/>
 
             <Button
                 android:id="@+id/getResultsButton"
@@ -210,7 +211,7 @@
                 android:fontFamily="@font/carter_one"
                 android:onClick="@{viewmodel.sendText}"
                 android:text="@string/get_results"
-                android:textColor="@color/colorAccent"
+                android:textColor="#DE6D43"
                 android:textSize="15dp"
                 android:layout_weight="1"
                 android:layout_marginBottom="20dp"
