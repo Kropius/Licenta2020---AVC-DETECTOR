@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb62000-da61-4e8c-8fb1-524403c22849" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/endTest/endTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_end_test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/data/network/MyApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/data/network/MyApi.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/firstscreen/FirstScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/firstscreen/FirstScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/home/home.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/home/home.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/symptoms/Symptoms.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/symptoms/Symptoms.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/smilingphoto/smilingPhoto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/smilingphoto/smilingPhoto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/typingTest/typingTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/typingTest/typingTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/voiceTest/voiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/voiceTest/voiceTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/drawable-v24/smile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_first.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_first.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_normal_photo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_normal_photo.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_register.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_smiling_photo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_smiling_photo.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_symptoms.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_symptoms.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_typing_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_typing_test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_voice_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_voice_test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/routes.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

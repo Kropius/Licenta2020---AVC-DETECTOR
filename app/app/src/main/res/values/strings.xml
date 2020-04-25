@@ -81,6 +81,12 @@
 
     <string name="register_title">Inregistrare</string>
     <string name="register_subtitle">Creati-va un cont nou!</string>
+    <string name="register_normal_photo_title">Incarca o poza cu fata ta!</string>
+    <string name="register_smiling_photo_title">Incarca o poza cu fata ta zambind cat de tare poti!</string>
+    <string name="register_recording_title">Inregistreaza-te in timp ce reciti textul de mai jos!</string>
+    <string name="register_recording_text_default">Pentru a obtine textul, apasa Reimprospateaza text!</string>
+    <string name="register_text_title">Incearca sa tastezi textul de mai jos!</string>
+    <string name="register_text_test_default">Aici va fi afisat textul pe care trebuie sa il tastezi. Apasa Reimprospateaza text pentru a obtine unul nou!</string>
 
 
 

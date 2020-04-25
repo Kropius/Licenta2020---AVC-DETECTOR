@@ -76,6 +76,7 @@
                 />
 
             <EditText
+                android:id="@+id/name_register"
                 android:layout_marginTop="20dp"
                 android:textAlignment="center"
                 android:layout_marginStart="30dp"
@@ -101,6 +102,7 @@
 
                 />
             <EditText
+                android:id="@+id/pass_register"
                 android:textAlignment="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="30dp"
@@ -127,6 +129,7 @@
 
                 />
             <EditText
+                android:id="@+id/email_register"
                 android:layout_marginBottom="20dp"
                 android:textAlignment="center"
                 android:layout_marginTop="10dp"
@@ -139,6 +142,304 @@
                 android:layout_column="1"
                 android:fontFamily="@font/carter_one"/>
         </GridLayout>
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#EC6778">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register_normal_photo_title"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:fontFamily="@font/carter_one"
+            android:layout_marginBottom="20dp"
+            android:textColor="#000000"/>
+        <ImageView
+            android:id="@+id/normal_photo_register"
+            android:layout_width="266dp"
+            android:layout_height="262dp"
+            android:src="@drawable/profile_pc"
+            android:layout_gravity="center"/>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            >
+            <Button
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_color_dark_green"
+                android:text="@string/gallery"
+                android:fontFamily="@font/carter_one"
+                />
+            <Button
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_color_dark_green"
+                android:text="@string/camera"
+                android:fontFamily="@font/carter_one"/>
 
+        </LinearLayout>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FCD2A8">
+            <TextView
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/register_smiling_photo_title"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:fontFamily="@font/carter_one"
+                android:layout_marginBottom="20dp"
+                android:textColor="#000000"/>
+            <ImageView
+                android:layout_width="266dp"
+                android:layout_height="262dp"
+                android:src="@drawable/profile_pc"
+                android:layout_gravity="center"
+                android:id="@+id/smiling_photo_register"/>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_color_dark_green"
+                    android:text="@string/gallery"
+                    android:fontFamily="@font/carter_one"
+                    />
+                <Button
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_color_dark_green"
+                    android:text="@string/camera"
+                    android:fontFamily="@font/carter_one"/>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#529A86">
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="197dp"
+                    android:layout_height="155dp"
+                    android:src="@drawable/speaking_resizable" />
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_recording_title"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/carter_one"
+                    android:textSize="24sp"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/recording_text_register"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/carter_one"
+                android:text="Pentru a obtine textul pe care trebuie sa il reciti, te rugam apasa REIMPROSPATEAZA TEXT"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/refreshText"
+                android:layout_width="201dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/my_buton"
+                android:drawableLeft="@drawable/button_refresh"
+                android:fontFamily="@font/carter_one"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="@string/refresh"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#EC6778">
+                <TextView
+                    android:id="@+id/said_text_register"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/saidText"
+                    android:fontFamily="@font/carter_one"
+                    android:textSize="24sp"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+                <Button
+                    android:id="@+id/startRecordingRegister"
+                    android:layout_width="160dp"
+                    android:layout_height="51dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/my_buton"
+                    android:fontFamily="@font/carter_one"
+                    android:text="@string/start_record"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FCD2A8">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="357dp"
+                    android:layout_height="192dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/writing"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_text_title"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/carter_one"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/typing_text_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pentru a obtine textul pe care trebuie sa il scrii, te rugam apasa REIMPROSPATEAZA TEXT"
+                android:fontFamily="@font/carter_one"
+                android:textSize="24sp"
+                android:textAlignment="center"/>
+
+            <Button
+                android:layout_width="201dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/my_buton"
+                android:drawableLeft="@drawable/button_refresh"
+                android:fontFamily="@font/carter_one"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="@string/refresh" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#529A86"
+        >
+
+        <EditText
+            android:id="@+id/editTextTypedRegister"
+            android:layout_width="match_parent"
+            android:layout_height="101dp"
+            android:ems="10"
+            android:fontFamily="@font/carter_one"
+            android:hint="Enter your sentence here"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLength="2000"
+            android:maxLines="4"
+            android:textAlignment="center"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/my_buton"
+            android:fontFamily="@font/carter_one"
+            android:text="@string/add_text"
+
+            />
+        <TextView
+            android:id="@+id/typedTextRegister"
+            android:layout_width="399dp"
+            android:layout_height="103dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/carter_one"
+            android:text="@string/typing_text_text_typed"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+
+            android:layout_marginBottom="10dp"/>
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:fontFamily="@font/carter_one"
+            android:textSize="35sp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:background="#EC6778"/>
+
+
+    </LinearLayout>
     </LinearLayout>
 </ScrollView>
