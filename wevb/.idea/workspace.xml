@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb62000-da61-4e8c-8fb1-524403c22849" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/Login.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/Login.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/Register.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/Register.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_register.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/json_files/Kropiusdb.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/json_files/Kropiusdb.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/json_files/Kropiusnow.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/json_files/Kropiusnow.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,31 +18,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/app.db">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapi/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="66" column="44" lean-forward="true" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+            <state relative-caret-position="343">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
               <folding>
                 <element signature="e#0#84#0" expanded="true" />
               </folding>
@@ -47,43 +30,35 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/detection/preprocessing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1075">
-              <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/234d0a8eebd25ad5.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/detection/take_decision.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/676548de4864d2f8.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropiusnow.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="240" selection-start-column="240" selection-end-column="240" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/a40421a4e359c692.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/9fed9a3f2ed1dd5e.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/8cbf2e56c76202f4.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropiusdb.json">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="241" selection-start-column="241" selection-end-column="241" />
+              <caret column="318" selection-start-column="318" selection-end-column="318" />
             </state>
           </provider>
         </entry>
@@ -171,6 +146,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="wevb" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\info\LICENTA2020\wevb" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="wevb" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\info\LICENTA2020\wevb" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="webapi" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="wevb" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\info\LICENTA2020\wevb" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="webapi" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="UPLOAD_FOLDER_RECORDINGS" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,34 +242,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="wevb" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\info\LICENTA2020\wevb" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="wevb" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\info\LICENTA2020\wevb" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="webapi" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="wevb" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="E:\info\LICENTA2020\wevb" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="webapi" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="UPLOAD_FOLDER_RECORDINGS" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Facultate/Anul3/Semestrul2/arms/lab1" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -428,12 +403,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27976817" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27976817" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30552545" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30552545" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -481,11 +456,6 @@
     <SUITE FILE_PATH="coverage/wevb$app.coverage" NAME="app Coverage Results" MODIFIED="1582178873257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/e44e8a85a877cf66.jpg" />
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/4fc730b3cdbc8189.jpg" />
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/b82428e4059d0302.jpg" />
-    <entry file="file://$PROJECT_DIR$/webapi/texts.txt" />
-    <entry file="file://$PROJECT_DIR$/webapi/build_db.py" />
     <entry file="file://$PROJECT_DIR$/webapi/detection.py" />
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/flask/globals.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -660,14 +630,14 @@
     <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropiusnow.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="240" selection-start-column="240" selection-end-column="240" />
+          <caret column="317" selection-start-column="317" selection-end-column="317" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropiusdb.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="241" selection-start-column="241" selection-end-column="241" />
+          <caret column="318" selection-start-column="318" selection-end-column="318" />
         </state>
       </provider>
     </entry>
@@ -694,13 +664,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webapi/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="66" column="44" lean-forward="true" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+        <state relative-caret-position="343">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
           <folding>
             <element signature="e#0#84#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/234d0a8eebd25ad5.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/676548de4864d2f8.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/a40421a4e359c692.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/9fed9a3f2ed1dd5e.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/8cbf2e56c76202f4.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
   <component name="masterDetails">

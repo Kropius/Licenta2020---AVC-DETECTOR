@@ -145,13 +145,7 @@ class smilingPhoto : AppCompatActivity(),SmilingPhotoListener {
         }
     }
 
-    private fun galleryAddPic() {
-        Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE).also { mediaScanIntent ->
-            val f = File(currentPhotoPath)
-            mediaScanIntent.data = Uri.fromFile(f)
-            sendBroadcast(mediaScanIntent)
-        }
-    }
+
 
     fun getPath(uri: Uri): String {
         val projection = Array<String>(1) { MediaStore.Images.Media.DATA };

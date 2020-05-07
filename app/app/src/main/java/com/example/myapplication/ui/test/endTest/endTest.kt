@@ -26,7 +26,7 @@ class endTest : AppCompatActivity(), endTesteListener {
         this.verdictSubTytle!!.text = verdictSubTytle
         this.verdictTips!!.text = verdictTips
         this.vbuttonEndText!!.text = vbuttonEndText
-        if(this.verdictTitle!!.text != "You are okay!"){
+        if(this.verdictTitle!!.text != "Esti bine!"){
             this.buttonCall!!.setOnClickListener { call911() }
         }
         else{

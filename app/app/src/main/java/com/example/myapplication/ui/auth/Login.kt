@@ -1,25 +1,17 @@
 package com.example.myapplication.ui.auth
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.myapplication.databinding.ActivityLoginBinding
+import com.example.myapplication.ui.home.home
 import com.example.myapplication.util.hide
 import com.example.myapplication.util.show
 import com.example.myapplication.util.toast
-import kotlinx.android.synthetic.main.activity_login.*
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import android.util.Log
-import com.example.myapplication.ui.firstscreen.FirstScreen
-import com.example.myapplication.ui.home.home
 import dagger.Component
-import kotlinx.coroutines.awaitAll
+import kotlinx.android.synthetic.main.activity_login.*
 
 
 @Component

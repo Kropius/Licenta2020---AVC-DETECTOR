@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.myapplication.ui.auth.RegisterViewModel" />
+    </data>
 <ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <LinearLayout
@@ -85,8 +90,10 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/username"
                 android:layout_row="0"
+                android:text="@{viewmodel.username}"
                 android:layout_column="1"
-                android:fontFamily="@font/carter_one"/>
+                android:fontFamily="@font/carter_one"
+                />
             <TextView
                 android:textColor="#000000"
                 android:layout_marginTop="10dp"
@@ -112,7 +119,8 @@
                 android:hint="@string/password"
                 android:layout_row="1"
                 android:layout_column="1"
-                android:fontFamily="@font/carter_one"/>
+                android:fontFamily="@font/carter_one"
+                android:text="@{viewmodel.password}"/>
             <TextView
                 android:textColor="#000000"
                 android:layout_marginTop="10dp"
@@ -140,7 +148,8 @@
                 android:hint="@string/email"
                 android:layout_row="2"
                 android:layout_column="1"
-                android:fontFamily="@font/carter_one"/>
+                android:fontFamily="@font/carter_one"
+                android:text="@{viewmodel.email}"/>
         </GridLayout>
         <LinearLayout
         android:layout_width="match_parent"
@@ -171,6 +180,8 @@
             android:layout_marginBottom="20dp"
             >
             <Button
+                android:id="@+id/start_gallery_normal_photo"
+                android:onClick="startGalleryRegister"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_weight="1"
@@ -181,6 +192,8 @@
                 android:fontFamily="@font/carter_one"
                 />
             <Button
+                android:id="@+id/start_camera_normal_photo"
+                android:onClick="startCameraRegister"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_weight="1"
@@ -222,6 +235,8 @@
                 android:orientation="horizontal"
                 >
                 <Button
+                    android:onClick="startGalleryRegister"
+                    android:id="@+id/start_galery_smiling_photo"
                     android:layout_marginBottom="20dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
@@ -233,6 +248,8 @@
                     android:fontFamily="@font/carter_one"
                     />
                 <Button
+                    android:onClick="startCameraRegister"
+                    android:id="@+id/start_camera_smiling_photo"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:layout_weight="1"
@@ -437,9 +454,11 @@
             android:paddingTop="10dp"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:background="#EC6778"/>
+            android:background="#EC6778"
+            android:onClick="@{viewmodel.registerPress}"/>
 
 
     </LinearLayout>
     </LinearLayout>
 </ScrollView>
+</layout>
