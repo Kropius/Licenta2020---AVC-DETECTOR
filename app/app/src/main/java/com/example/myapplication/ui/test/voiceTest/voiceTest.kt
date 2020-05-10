@@ -77,40 +77,7 @@ class voiceTest : AppCompatActivity(), VoiceTestListener, VoiceTestSender {
     var REQUEST_RECORD_AUDIO_PERMISSION = 101
     private var sr: SpeechRecognizer? = null
 
-    private fun setupPermissions() {
 
-        var permission = ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET)
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            Log.i("Info", "Permission to use internet denied")
-            makeRequest(Manifest.permission.INTERNET, INTERNET_PERMISSION)
-
-        } else {
-            Log.i("Info", "Permission given!")
-
-        }
-        permission = ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            Log.i("Info", "Permission to record denied")
-            makeRequest(Manifest.permission.RECORD_AUDIO, RECORD_PERMISSION)
-        } else {
-            Log.i("Info", "Permission given!")
-        }
-        permission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            Log.i("Info", "Permission to write on external storage denied")
-            makeRequest(Manifest.permission.WRITE_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE_REQUEST_CODE)
-
-        } else {
-            Log.i("Info", "Permission given!")
-
-        }
-    }
-
-    private fun makeRequest(permission: String, code: Int) {
-        ActivityCompat.requestPermissions(this,
-                arrayOf(permission),
-                code)
-    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -118,7 +85,7 @@ class voiceTest : AppCompatActivity(), VoiceTestListener, VoiceTestSender {
 
         getSupportActionBar()?.hide();
 
-        setupPermissions()
+
         binding = DataBindingUtil.setContentView<ActivityVoiceTestBinding>(this, com.example.myapplication.R.layout.activity_voice_test)
         viewModel = ViewModelProviders.of(this).get(VoiceTestViewModel::class.java)
         viewModel!!.voiceListener = this
@@ -178,29 +145,29 @@ class voiceTest : AppCompatActivity(), VoiceTestListener, VoiceTestSender {
             Log.d("Info", "error $error")
             var message: String? = null
             if (error == 1) {
-                message = "Operation timed out. Check your internet connection. Google's servers might be down.Update the Google App if needed."
+                message = "Dureaza prea mult. Verifica conexiunea la internet. Serverele Google s-ar putea sa nu functioneze. Aplicatia Google trebuie sa fie mereu actualizata."
             }
             if (error == 2) {
-                message = "Operation timed out. Check your internet connection. Google's servers might be down. Update the Google App if needed."
+                message = "Dureaza prea mult. Verifica conexiunea la internet. Serverele Google s-ar putea sa nu functioneze. Aplicatia Google trebuie sa fie mereu actualizata."
             }
             if (error == 3) {
-                message = "There was a problem with the recording."
+                message = "Ceva nu a functionat cum trebuie. Reincearca"
             }
             if (error == 4) {
-                message = "Operation timed out. Check your internet connection. Google's servers might be down.Update the Google App if needed."
+                message = "Dureaza prea mult. Verifica conexiunea la internet. Serverele Google s-ar putea sa nu functioneze. Aplicatia Google trebuie sa fie mereu actualizata."
 
             }
             if (error == 5) {
-                message = "There was an error with your device. Restart the application.Update the Google App if needed."
+                message = "A aparut o problema la telefonul tau. Restarteaza aplicatia.Actualizeaza aplicatia Google, daca este nevoie"
             }
             if (error == 6) {
-                message = "Please start talking."
+                message = "Te rog, vorbeste!"
             }
             if (error == 7) {
-                message = "Couldn't recognize what you said. Please try again."
+                message = "Nu am inteles ce ai spus. Mai incearca!"
             }
             if (error == 9) {
-                message = "Insufficient permission. Please modify the application's permissions."
+                message = "Permisiuni insuficiente!"
             }
             saidText!!.text = message
         }

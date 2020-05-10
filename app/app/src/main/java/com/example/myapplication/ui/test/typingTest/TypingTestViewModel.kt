@@ -38,11 +38,11 @@ class TypingTestViewModel(application: Application) : AndroidViewModel(applicati
     public fun sendText(view:View){
         typingTestListenerSender!!.onStartedSender()
         if(textId == null){
-            typingTestListenerSender!!.onFailureSender("Hit refresh text first!")
+            typingTestListenerSender!!.onFailureSender("Apasa Reimprospateaza textul mai intai!")
             return;
         }
         if(textToBeSent.isNullOrEmpty()){
-            typingTestListenerSender!!.onFailureSender("Type something!")
+            typingTestListenerSender!!.onFailureSender("Scrie ceva!")
             return;
         }
         Coroutines.main{
@@ -50,7 +50,7 @@ class TypingTestViewModel(application: Application) : AndroidViewModel(applicati
             if(response.isSuccessful)
                 typingTestListenerSender!!.onSuccessSender(response.body()!!.response)
             else{
-                typingTestListenerSender!!.onFailureSender("Something went wrong!")
+                typingTestListenerSender!!.onFailureSender("Ceva nu a functionat!")
             }
         }
 

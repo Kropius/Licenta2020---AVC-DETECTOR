@@ -2,6 +2,7 @@ from webapi.models import User, NormalPhoto, SmilingPhoto, TypingTest, Recording
 from webapi import app, bcrypt, db, conn
 from flask import request, jsonify
 from sqlalchemy import exc
+
 # from webapi.functionalities import save_photo
 from webapi.detection.preprocessing import PreprocessData
 from webapi.detection.take_decision import builder
@@ -40,9 +41,11 @@ def get_new_authorization_token():
 def login():
     if request.method == 'POST':
         user = User.query.filter_by(username=request.form['username']).first()
+        print(request.form['username'])
         if user and bcrypt.check_password_hash(user.password, request.form['password']):
             x = create_access_token(identity=user.username)
-            print(x)
+            print('mata')
+            print(bcrypt.check_password_hash(user.password, request.form['password']))
             ret = {
 
                 'access_token': x,
@@ -60,28 +63,30 @@ def register():
     if request.method == "POST":
         print(request.files)
         preprocessator = PreprocessData()
-        username = request.form['username']
-        password = request.form['password']
-        email = request.form['email']
+        username = request.form['username'][1:-1]
+        password = request.form['password'][1:-1]
+        email = request.form['email'][1:-1]
         image = request.files['normal_photo']
         smiling_image = request.files['smiling_photo']
-        recording = request.form['recording_text']
-        recording_id_text = request.form['recording_id_text']
-        typed_text = request.form['typed_text']
-        typed_text_id = request.form['typed_text_id']
-
+        recording = request.form['recording_text'][1:-1]
+        recording_id_text = request.form['recording_id_text'][1:-1]
+        typed_text = request.form['typed_text'][1:-1]
+        typed_text_id = request.form['typed_text_id'][1:-1]
+        print(username,password,email)
         data = preprocessator.check_similarity(typed_text_id, typed_text)
         hashed_passwd = bcrypt.generate_password_hash(password)
         user = User(username=username, password=hashed_passwd.decode('utf-8'), email=email)
-        user.save_to_db()
+       
         try:
             db.session.add(user)
             db.session.commit()
         except exc.IntegrityError as err:
+            print(str(err))
             if "user.email" in str(err):
                 error = "Email already exists!"
             elif "user.username" in str(err):
                 error = "Username already exists!"
+            db.session.rollback()
             return jsonify({"success": str(error)})
         else:
             normal_path = save_photo('webapi/static/base_normal_photos', image.filename)
@@ -153,7 +158,6 @@ def get_smiley_corners():
 
 
 @app.route('/get_text', methods=['GET'])
-@jwt_required
 def get_text():
     """
     Returns a random text from the database

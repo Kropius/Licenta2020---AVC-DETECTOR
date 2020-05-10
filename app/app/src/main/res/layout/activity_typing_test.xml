@@ -141,7 +141,7 @@
                 android:layout_height="101dp"
                 android:ems="10"
                 android:fontFamily="@font/carter_one"
-                android:hint="Enter your sentence here"
+                android:hint="Introdu aici propozitia"
                 android:inputType="textCapSentences|textMultiLine"
                 android:maxLength="2000"
                 android:maxLines="4"

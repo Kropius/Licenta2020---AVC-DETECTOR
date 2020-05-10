@@ -31,7 +31,7 @@ import java.util.*
 class smilingPhoto : AppCompatActivity(),SmilingPhotoListener {
     override fun onStared() {
         progress_bar.show()
-        Toast.makeText(this, "Sending the photo", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Trimitem poza", Toast.LENGTH_SHORT).show()
     }
 
     override fun onSuccess(response: String?) {
@@ -129,14 +129,13 @@ class smilingPhoto : AppCompatActivity(),SmilingPhotoListener {
         } else if (requestCode == REQUEST_IMAGE_GALLERY) {
             if (data != null) {
                 var ourUri = data.data
-                Toast.makeText(this, getPath(ourUri!!), Toast.LENGTH_LONG).show()
                 var myImg = findViewById<ImageView>(R.id.mySmilingImageView)
                 myImg.setImageURI(ourUri)
                 val layoutParams = myImg.getLayoutParams();
                 layoutParams.width = 1400;
                 layoutParams.height = 700;
                 myImg.setLayoutParams(layoutParams);
-                viewModel!!.photoUri = getPath(ourUri).toString()
+                viewModel!!.photoUri = getPath(ourUri!!).toString()
 
 
             } else {

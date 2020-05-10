@@ -15,7 +15,7 @@ import com.example.myapplication.ui.test.endTest.endTest
 
 class typingTest : AppCompatActivity(), TypingTestListener,TypingTestListenerSender {
     override fun onStartedSender() {
-        Toast.makeText(this,"Sending the text to the server",Toast.LENGTH_LONG).show()
+        Toast.makeText(this,"Trimitem textul",Toast.LENGTH_LONG).show()
     }
 
     override fun onSuccessSender(string: String) {

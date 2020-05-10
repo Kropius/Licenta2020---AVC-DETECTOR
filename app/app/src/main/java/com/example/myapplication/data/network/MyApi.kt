@@ -63,6 +63,18 @@ interface MyApi {
     @POST("send_final_result")
     suspend fun sendFinalResult(@Header("Bearer") token: String): Response<endTestResponse>
 
+    @Multipart
+    @POST("register")
+    suspend fun register(@Header("Bearer") token: String,
+                                   @Part("username") username: String,
+                                   @Part ("password") password: String,
+                                   @Part("email") email:String,
+                                   @Part normalPhoto: MultipartBody.Part,
+                                   @Part smilingPhoto:MultipartBody.Part,
+                                   @Part("recording_text") recording:String,
+                                   @Part("recording_id_text") recordingIdText:String,
+                                   @Part("typed_text") textTyped:String,
+                                   @Part("typed_text_id") idTextTyping:String): Response<regosterResponse>
     companion object {
         operator fun invoke(context: Context): MyApi {
             val okHttpClient = OkHttpClient().newBuilder()

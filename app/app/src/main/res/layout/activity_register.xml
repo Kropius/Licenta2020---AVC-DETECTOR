@@ -90,7 +90,7 @@
                 android:background="@drawable/edit_text"
                 android:hint="@string/username"
                 android:layout_row="0"
-                android:text="@{viewmodel.username}"
+                android:text="@={viewmodel.username}"
                 android:layout_column="1"
                 android:fontFamily="@font/carter_one"
                 />
@@ -120,7 +120,7 @@
                 android:layout_row="1"
                 android:layout_column="1"
                 android:fontFamily="@font/carter_one"
-                android:text="@{viewmodel.password}"/>
+                android:text="@={viewmodel.password}"/>
             <TextView
                 android:textColor="#000000"
                 android:layout_marginTop="10dp"
@@ -149,7 +149,7 @@
                 android:layout_row="2"
                 android:layout_column="1"
                 android:fontFamily="@font/carter_one"
-                android:text="@{viewmodel.email}"/>
+                android:text="@={viewmodel.email}"/>
         </GridLayout>
         <LinearLayout
         android:layout_width="match_parent"
@@ -288,6 +288,7 @@
             </LinearLayout>
 
             <TextView
+
                 android:id="@+id/recording_text_register"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"
@@ -300,6 +301,7 @@
                 android:textSize="24sp" />
 
             <Button
+                android:onClick="@{viewmodel.getTextSpeech}"
                 android:id="@+id/refreshText"
                 android:layout_width="201dp"
                 android:layout_height="51dp"
@@ -333,6 +335,7 @@
                     android:textAlignment="center"
                     android:textColor="#000000"/>
                 <Button
+                    android:onClick="startStopRecordingRegister"
                     android:id="@+id/startRecordingRegister"
                     android:layout_width="160dp"
                     android:layout_height="51dp"
@@ -384,6 +387,7 @@
                 android:textAlignment="center"/>
 
             <Button
+                android:onClick="@{viewmodel.getTextTyping}"
                 android:layout_width="201dp"
                 android:layout_height="51dp"
                 android:layout_gravity="center"
@@ -419,6 +423,7 @@
             android:textAlignment="center"
             android:layout_weight="1"/>
         <Button
+            android:onClick="setTextTypingText"
             android:layout_width="162dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

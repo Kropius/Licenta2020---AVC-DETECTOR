@@ -20,6 +20,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityNormalPhotoBinding
+import com.example.myapplication.ui.firstscreen.FirstScreen
+import com.example.myapplication.ui.home.home
 import com.example.myapplication.ui.test.smilingphoto.smilingPhoto
 import com.example.myapplication.util.hide
 import com.example.myapplication.util.show
@@ -34,9 +36,7 @@ import kotlin.math.log
 class normalPhoto : AppCompatActivity(), NormalPhotoListener {
 
 
-    val CAMERA_PERMISSION_REQUEST_CODE = 100;
-    val READ_EXTERNAL_PERMISSION_REQUEST_CODE = 101;
-    val WRITE_EXTERNAL_STORAGE = 102
+    val multiple_permissions = 101
     val REQUEST_IMAGE_CAPTURE = 1
     val REQUEST_IMAGE_GALLERY = 2
     var viewModel: NormalPhotoViewModel? = null
@@ -54,40 +54,85 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
     }
 
     private fun setupPermissions() {
+        var flag: Boolean = false;
+
+        var permissions = java.util.ArrayList<String>(5);
         var permission = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.READ_EXTERNAL_STORAGE)
 
         if (permission != PackageManager.PERMISSION_GRANTED) {
-            Log.i("Info", "Permission to read to external storage denied")
-            makeRequest(Manifest.permission.READ_EXTERNAL_STORAGE, READ_EXTERNAL_PERMISSION_REQUEST_CODE)
+            permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE)
+            flag = true
+
         } else {
             Log.i("Info", "Permission given!")
         }
+
         permission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
         if (permission != PackageManager.PERMISSION_GRANTED) {
             Log.i("Info", "Permission to use camera denied")
-            makeRequest(Manifest.permission.CAMERA, CAMERA_PERMISSION_REQUEST_CODE)
+            permissions.add(Manifest.permission.CAMERA)
+            flag = true
+
         } else {
             Log.i("Info", "Permission given!")
         }
-        permission = ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE)
-        if(permission!=PackageManager.PERMISSION_GRANTED){
+
+        permission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        if (permission != PackageManager.PERMISSION_GRANTED) {
             Log.i("Info", "Permission to write on external storage denied")
-            makeRequest(Manifest.permission.WRITE_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE)
+            permissions.add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            flag = true
+
+        } else {
+            Log.i("Info", "Permission given!")
+        }
+        permission = ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET)
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            Log.i("Info", "Permission to use internet denied")
+            permissions.add(Manifest.permission.INTERNET)
+            flag=true
+
+        } else {
+            Log.i("Info", "Permission given!")
 
         }
-        else{
-            Log.i("Info","Permission given!")
-
+        permission = ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            Log.i("Info", "Permission to record denied")
+            permissions.add(Manifest.permission.RECORD_AUDIO)
+            flag=true
+        } else {
+            Log.i("Info", "Permission given!")
+        }
+        if (flag == true) {
+            makeRequest(permissions)
         }
     }
 
-    private fun makeRequest(permission: String, code: Int) {
+    private fun makeRequest(permission: ArrayList<String>) {
+        var myArray: Array<String> = permission.toTypedArray()
+
         ActivityCompat.requestPermissions(this,
-                arrayOf(permission),
-                code)
+                myArray,
+                101)
     }
+    override fun onRequestPermissionsResult(requestCode: Int,
+                                            permissions: Array<String>, grantResults: IntArray) {
 
+        when (requestCode) {
+            multiple_permissions -> {
+
+                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+
+
+                } else {
+                    Toast.makeText(this,"Permisiuni insuficiente",Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this, home::class.java))                }
+                return
+            }
+        }
+    }
     public fun startGallery(view: View) {
         val photoPickerIntent = Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
@@ -95,13 +140,6 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
     }
 
     public fun startCamera(view: View) {
-        val permission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            Log.i("Info", "Permission to use camera denied")
-            makeRequest(Manifest.permission.CAMERA, CAMERA_PERMISSION_REQUEST_CODE)
-        } else {
-            Log.i("Info", "Permission given!")
-        }
 
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
             // Ensure that there's a camera activity to handle the intent
@@ -199,7 +237,7 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
 
     override fun onStared() {
         progress_bar.show()
-        Toast.makeText(this, "Sending the photo", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Trimitem  poza", Toast.LENGTH_SHORT).show()
     }
 
     override fun onSuccess(response: String?) {

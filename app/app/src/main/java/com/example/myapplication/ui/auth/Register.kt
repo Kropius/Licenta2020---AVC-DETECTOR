@@ -8,9 +8,14 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.speech.RecognitionListener
+import android.speech.RecognizerIntent
+import android.speech.SpeechRecognizer
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -23,7 +28,9 @@ import com.example.myapplication.databinding.ActivityRegisterBinding
 import com.example.myapplication.ui.firstscreen.FirstScreen
 import com.example.myapplication.ui.home.home
 import com.example.myapplication.ui.test.normalphoto.normalPhoto
+import com.example.myapplication.util.toast
 import kotlinx.android.synthetic.main.activity_register.*
+import org.w3c.dom.Text
 import java.io.File
 import java.io.IOException
 import java.security.Permissions
@@ -32,7 +39,32 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class Register : AppCompatActivity(), RegisterListener {
+    override fun onFailureGetTextTyping(message: String?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
+    override fun onSuccesGetTextTyping(message: String?) {
+       textReceivedTypingRegister!!.text= message
+    }
+
+    override fun onSuccessGetTextRecording(message: String?) {
+            textReceivedSpeechRegister!!.text = message
+    }
+
+    override fun onFailureGetTextRecording(message: String?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+    override fun onStared() {
+        Toast.makeText(this, "Starting to send info for register!", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onSuccess(response: String?) {
+        toast(response!!)
+    }
+
+    override fun onFailure(message: String) {
+        toast(message)
+    }
     val multiplePermissions = 101
 
     val REQUEST_IMAGE_CAPTURE_NORMAL_PHOTO = 1
@@ -41,9 +73,17 @@ class Register : AppCompatActivity(), RegisterListener {
     val REQUEST_IMAGE_CAPTURE_SMILING_PHOTO = 3
     val REQUEST_IMAGE_GALLERY_SMILING_PHOTO = 4
 
-
+    var sr:SpeechRecognizer?=null
     var normalPhotoPath: String? = null
     var smilingPhotoPath:String?=null
+
+    var saidText:TextView?=null
+    var saidTextFlag = false
+    var textReceivedSpeechRegister:TextView?=null
+
+    var typedText:TextView?=null
+    var typedTextEditText:EditText?=null
+    var textReceivedTypingRegister:TextView?=null
 
     var viewModel:RegisterViewModel?=null
     private fun setupPermissions() {
@@ -273,11 +313,6 @@ class Register : AppCompatActivity(), RegisterListener {
         }
 
 
-
-
-
-
-
     @Throws(IOException::class)
     private fun createImageFile(flag:String): File {
         // Create an image file name
@@ -304,16 +339,106 @@ class Register : AppCompatActivity(), RegisterListener {
             }
         }
     }
-    override fun onStared() {
-        Toast.makeText(this, "Starting to send info for register!", Toast.LENGTH_LONG).show()
+
+    public fun startStopRecordingRegister(view: View) {
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+        intent.putExtra(
+
+                RecognizerIntent.EXTRA_LANGUAGE, "ro"
+        )
+        intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, "voice.recognition.test")
+
+        intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 5)
+        sr!!.startListening(intent)
+
     }
 
-    override fun onSuccess(response: String?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+    internal inner class listener : RecognitionListener {
+        override fun onReadyForSpeech(params: Bundle) {
+            Log.d("Info", "onReadyForSpeech")
+        }
+
+        override fun onBeginningOfSpeech() {
+            Log.d("Info", "onBeginningOfSpeech")
+        }
+
+        override fun onRmsChanged(rmsdB: Float) {
+            Log.d("Info", "onRmsChanged")
+        }
+
+        override fun onBufferReceived(buffer: ByteArray) {
+            Log.d("Info", "onBufferReceived")
+        }
+
+        override fun onEndOfSpeech() {
+            Log.d("Info", "onEndofSpeech")
+        }
+
+        override fun onError(error: Int) {
+            saidTextFlag = false
+            //viewModel!!.textRecordingFlag=false
+            Log.d("Info", "error $error")
+            var message: String? = null
+            if (error == 1) {
+                message = "Operation timed out. Check your internet connection. Google's servers might be down.Update the Google App if needed."
+            }
+            if (error == 2) {
+                message = "Operation timed out. Check your internet connection. Google's servers might be down. Update the Google App if needed."
+            }
+            if (error == 3) {
+                message = "There was a problem with the recording."
+            }
+            if (error == 4) {
+                message = "Operation timed out. Check your internet connection. Google's servers might be down.Update the Google App if needed."
+
+            }
+            if (error == 5) {
+                message = "There was an error with your device. Restart the application.Update the Google App if needed."
+            }
+            if (error == 6) {
+                message = "Please start talking."
+            }
+            if (error == 7) {
+                message = "Couldn't recognize what you said. Please try again."
+            }
+            if (error == 9) {
+                message = "Insufficient permission. Please modify the application's permissions."
+            }
+            saidText!!.text = message
+        }
+
+        override fun onResults(results: Bundle) {
+            var str = String()
+            Log.d("Info", "onResults $results")
+            val data = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+            for (i in data!!.indices) {
+                Log.d("Info", "result " + data[i])
+                str += data[i]
+            }
+            saidText!!.text = data[0].toString()
+            saidTextFlag = true
+            if (saidTextFlag == true) {
+                viewModel!!.recordingText = saidText!!.text.toString()
+                viewModel!!.recordingFlag = true
+            }
+        }
+
+        override fun onPartialResults(partialResults: Bundle) {
+            Log.d("Info", "onPartialResults")
+        }
+
+        override fun onEvent(eventType: Int, params: Bundle) {
+            Log.d("Info", "onEvent $eventType")
+        }
     }
 
-    override fun onFailure(message: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    public fun setTextTypingText(view: View){
+        var textTyped:String?=null
+        textTyped = typedTextEditText!!.text.toString()
+        viewModel!!.typingTextTypedRegister = textTyped
+        typedText!!.text = textTyped
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -325,5 +450,14 @@ class Register : AppCompatActivity(), RegisterListener {
         viewModel = ViewModelProviders.of(this).get(RegisterViewModel::class.java)
         binding.viewmodel = viewModel
         viewModel!!.registerListener = this
+        sr = SpeechRecognizer.createSpeechRecognizer(this)
+        sr!!.setRecognitionListener(listener())
+
+        saidText = findViewById<TextView>(R.id.said_text_register)
+        textReceivedSpeechRegister=findViewById(R.id.recording_text_register)
+
+        typedText = findViewById(R.id.typedTextRegister)
+        typedTextEditText=findViewById(R.id.editTextTypedRegister)
+        textReceivedTypingRegister = findViewById(R.id.typing_text_register)
     }
 }

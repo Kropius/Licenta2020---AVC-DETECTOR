@@ -20,17 +20,15 @@ class SmilingPhotoViewModel(application: Application) : AndroidViewModel(applica
     var photoUri: String? = null
     var smilingPhotoListener: SmilingPhotoListener? = null
     public fun onNextButtoClickSmiling(view: View) {
-        Toast.makeText(context,"We are going to the next step!",Toast.LENGTH_LONG).show()
 
         smilingPhotoListener?.onStared()
         if (photoUri.isNullOrEmpty()) {
             //Toast.makeText(context,"This is empty",Toast.LENGTH_LONG).show()
-            smilingPhotoListener?.onFailure("Take or select a photo")
+            smilingPhotoListener?.onFailure("Alege o poza!")
 
         } else {
             Coroutines.main {
                 val file = File(photoUri!!)
-                Toast.makeText(context,"dumnezeulemare"+file.toString(),Toast.LENGTH_LONG).show()
                 val requestFile: RequestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file)
                 val requestImage = MultipartBody.Part.createFormData("image", file.name, requestFile)
                 // Log.i("Info", "cacat"+getTokens(context).toString())

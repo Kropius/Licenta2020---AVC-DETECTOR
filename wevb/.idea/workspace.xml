@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb62000-da61-4e8c-8fb1-524403c22849" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/Login.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/Login.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/Register.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/Register.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/RegisterListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/RegisterListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/RegisterViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/RegisterViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_register.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/json_files/Kropiusdb.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/json_files/Kropiusdb.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/json_files/Kropiusnow.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/json_files/Kropiusnow.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/site.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,21 +18,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapi/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="379">
+              <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
               <folding>
                 <element signature="e#0#84#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/234d0a8eebd25ad5.jpg">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -45,49 +41,45 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/9fed9a3f2ed1dd5e.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/8cbf2e56c76202f4.jpg">
+        <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/6ddef03cca685cca.jpg">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropiusdb.json">
+        <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/702ba1f3c94d4e16.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapi/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="318" selection-start-column="318" selection-end-column="318" />
+            <state relative-caret-position="1300">
+              <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/pydub/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6325">
-              <caret line="262" selection-start-line="262" selection-end-line="262" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_160608_8337623214322194111.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda3/Lib/subprocess.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19350">
-              <caret line="774" selection-start-line="774" selection-end-line="774" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_123131_714947289171364715.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/pydub/audio_segment.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16300">
-              <caret line="664" selection-start-line="664" selection-end-line="664" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/IMG_20200323_191756.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_120226_8475745591092235299.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -129,8 +121,8 @@
         <option value="$PROJECT_DIR$/trying.py" />
         <option value="$PROJECT_DIR$/webapi/models.py" />
         <option value="$PROJECT_DIR$/webapi/json_files/Kropiusdb.json" />
-        <option value="$PROJECT_DIR$/webapi/detection/preprocessing.py" />
         <option value="$PROJECT_DIR$/webapi/json_files/Kropiusnow.json" />
+        <option value="$PROJECT_DIR$/webapi/detection/preprocessing.py" />
         <option value="$PROJECT_DIR$/webapi/routes.py" />
       </list>
     </option>
@@ -403,12 +395,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27976817" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27976817" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30552545" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30552545" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -425,29 +417,6 @@
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="4" />
-      <window_info anchor="bottom" id="Python Console" order="5" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="right" id="SciView" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -456,26 +425,6 @@
     <SUITE FILE_PATH="coverage/wevb$app.coverage" NAME="app Coverage Results" MODIFIED="1582178873257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webapi/detection.py" />
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/flask/globals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/security.py" />
-    <entry file="file://$PROJECT_DIR$/webapi/json_files/IrinaCercel122433.json" />
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="394" column="13" selection-start-line="394" selection-start-column="13" selection-end-line="394" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropius.json" />
-    <entry file="file://$PROJECT_DIR$/webapi/detection/another_take_decision.py" />
-    <entry file="file://$PROJECT_DIR$/ceva.py" />
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/imutils/convenience.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
@@ -522,9 +471,6 @@
     <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_132620_5106237621126714146.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_120226_8475745591092235299.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_144131_1712089955106821672.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -534,9 +480,6 @@
           <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/IMG_20200323_191756.jpg">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_120641_3783294839432021715.jpg">
       <provider selected="true" editor-type-id="images" />
@@ -580,16 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapi/app.db">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -603,16 +536,6 @@
           <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/detection/preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1075">
-          <caret line="59" column="64" selection-start-line="59" selection-start-column="64" selection-end-line="59" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -634,6 +557,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/234d0a8eebd25ad5.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/9fed9a3f2ed1dd5e.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/8cbf2e56c76202f4.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropiusdb.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -648,13 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/subprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19350">
-          <caret line="774" selection-start-line="774" selection-end-line="774" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/pydub/audio_segment.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16300">
@@ -662,17 +587,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/routes.py">
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/subprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="543">
+          <caret line="774" selection-start-line="774" selection-end-line="774" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/detection/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="67" column="70" lean-forward="true" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
           <folding>
-            <element signature="e#0#84#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/234d0a8eebd25ad5.jpg">
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200507_150348_3601061510959517622.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200507_115749_3105095238942711362.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200413_163214_5280423732971024976.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200331_161021_4340586261402325014.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_160608_8337623214322194111.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_123131_714947289171364715.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/IMG_20200323_191756.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_120226_8475745591092235299.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/676548de4864d2f8.jpg">
@@ -681,11 +634,31 @@
     <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/a40421a4e359c692.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/9fed9a3f2ed1dd5e.jpg">
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/6ddef03cca685cca.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/8cbf2e56c76202f4.jpg">
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/702ba1f3c94d4e16.jpg">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1300">
+          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
