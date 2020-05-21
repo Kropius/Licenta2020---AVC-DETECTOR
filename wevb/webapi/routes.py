@@ -76,7 +76,7 @@ def register():
         data = preprocessator.check_similarity(typed_text_id, typed_text)
         hashed_passwd = bcrypt.generate_password_hash(password)
         user = User(username=username, password=hashed_passwd.decode('utf-8'), email=email)
-       
+
         try:
             db.session.add(user)
             db.session.commit()

@@ -113,6 +113,7 @@ class voiceTest : AppCompatActivity(), VoiceTestListener, VoiceTestSender {
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, "voice.recognition.test")
 
         intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 5)
+        intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS,300)
         sr!!.startListening(intent)
 
     }

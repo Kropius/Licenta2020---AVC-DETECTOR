@@ -67,7 +67,7 @@
     <string name="call911">Suna la 112</string>
     <string name="call_a_friend">Suna un prieten!</string>
 
-    <string name="end_test_verdict_good">Este foarte probabil ca tu sa ai un AVC</string>
+    <string name="end_test_verdict_good">Este foarte probabil ca tu sa nu ai un AVC</string>
     <string name="end_test_verdict_bad">Este foarte putin probabil ca tu sa ai un AVC</string>
 
     <string name="end_test_good">Esti bine!</string>
