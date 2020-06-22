@@ -28,7 +28,9 @@ import com.example.myapplication.databinding.ActivityRegisterBinding
 import com.example.myapplication.ui.firstscreen.FirstScreen
 import com.example.myapplication.ui.home.home
 import com.example.myapplication.ui.test.normalphoto.normalPhoto
+import com.example.myapplication.util.show
 import com.example.myapplication.util.toast
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 import org.w3c.dom.Text
 import java.io.File
@@ -55,7 +57,9 @@ class Register : AppCompatActivity(), RegisterListener {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
     override fun onStared() {
-        Toast.makeText(this, "Starting to send info for register!", Toast.LENGTH_LONG).show()
+//        progress_bar.show()
+
+        Toast.makeText(this, "Trimitem informatia la server!", Toast.LENGTH_LONG).show()
     }
 
     override fun onSuccess(response: String?) {
@@ -209,7 +213,6 @@ class Register : AppCompatActivity(), RegisterListener {
             }
         }
         else{
-
             Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
                 // Ensure that there's a camera activity to handle the intent
                 takePictureIntent.resolveActivity(packageManager)?.also {
@@ -247,8 +250,9 @@ class Register : AppCompatActivity(), RegisterListener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
+        Log.i("Info","misto"+data)
         if (requestCode == REQUEST_IMAGE_CAPTURE_NORMAL_PHOTO && resultCode == AppCompatActivity.RESULT_OK) {
+            Log.i("Info","necesar"+normalPhotoPath)
             val imgFile = File(normalPhotoPath!!)
             val myBitMap = BitmapFactory.decodeFile(imgFile.absolutePath)
             var myImg = findViewById<ImageView>(R.id.normal_photo_register)
@@ -293,19 +297,19 @@ class Register : AppCompatActivity(), RegisterListener {
             }
         }
         else if (requestCode == REQUEST_IMAGE_CAPTURE_SMILING_PHOTO) {
-            if (data != null) {
+                Log.i("Info","necesar"+smilingPhotoPath)
                 val imgFile = File(smilingPhotoPath!!)
                 val myBitMap = BitmapFactory.decodeFile(imgFile.absolutePath)
                 var myImg = findViewById<ImageView>(R.id.smiling_photo_register)
                 myImg.setImageBitmap(myBitMap)
                 val layoutParams = myImg.getLayoutParams();
                 layoutParams.width = 1400;
-                layoutParams.height = 700;
+                layoutParams.height = 700
                 myImg.setLayoutParams(layoutParams);
                 viewModel!!.smilingPhotoUri = smilingPhotoPath
 
 
-            }
+
         }
             else {
                 Toast.makeText(this, "INVALID", Toast.LENGTH_LONG).show()
@@ -381,29 +385,29 @@ class Register : AppCompatActivity(), RegisterListener {
             Log.d("Info", "error $error")
             var message: String? = null
             if (error == 1) {
-                message = "Operation timed out. Check your internet connection. Google's servers might be down.Update the Google App if needed."
+                message = "Dureze prea mult! Verificati conexiunea la internet! Aplicatia Google trebuie sa fie actualizata!"
             }
             if (error == 2) {
-                message = "Operation timed out. Check your internet connection. Google's servers might be down. Update the Google App if needed."
+                message = "Dureze prea mult! Verificati conexiunea la internet! Aplicatia Google trebuie sa fie actualizata!"
             }
             if (error == 3) {
-                message = "There was a problem with the recording."
+                message = "A aparut o problema. Mai incearca!"
             }
             if (error == 4) {
-                message = "Operation timed out. Check your internet connection. Google's servers might be down.Update the Google App if needed."
+                message = "Dureze prea mult! Verificati conexiunea la internet! Aplicatia Google trebuie sa fie actualizata!"
 
             }
             if (error == 5) {
-                message = "There was an error with your device. Restart the application.Update the Google App if needed."
+                message = "Cred ca dispozitivul dummneavoastra are o problema. Va rog actualizati aplicatia Google."
             }
             if (error == 6) {
-                message = "Please start talking."
+                message = "Te rog, spune ceva!"
             }
             if (error == 7) {
-                message = "Couldn't recognize what you said. Please try again."
+                message = "Nu am inteles ce am spus. Mai incearca!"
             }
             if (error == 9) {
-                message = "Insufficient permission. Please modify the application's permissions."
+                message = "Permisiuni insuficiente, te rog verifica permisiunile aplicatiei."
             }
             saidText!!.text = message
         }

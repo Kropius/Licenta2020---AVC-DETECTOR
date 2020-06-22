@@ -47,7 +47,7 @@ class endTest : AppCompatActivity(), endTesteListener {
     var vbuttonEndText: Button? = null
     var buttonCall:Button?=null
     public fun call911() {
-        startActivity(Intent(Intent.ACTION_DIAL).apply { data = Uri.parse("tel:911") })
+        startActivity(Intent(Intent.ACTION_DIAL).apply { data = Uri.parse("tel:112") })
     }
     public fun callFriend(){
         startActivity(Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI))

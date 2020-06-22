@@ -71,9 +71,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
     }
 
     public  fun registerPress(view: View){
-        Log.i("Info","ciprian"+username)
             registerListener!!.onStared()
-        Toast.makeText(context,username,Toast.LENGTH_SHORT).show()
         if(username.isNullOrEmpty()){
            registerListener!!.onFailure("Username invalid!")
             return

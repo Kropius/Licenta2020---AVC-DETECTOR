@@ -14,9 +14,6 @@ import dagger.Component
 import kotlinx.android.synthetic.main.activity_login.*
 
 
-@Component
-interface ApplicationComponent {}
-
 class Login : AppCompatActivity(), LoginListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {

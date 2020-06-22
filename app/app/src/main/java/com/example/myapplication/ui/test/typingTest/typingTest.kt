@@ -15,16 +15,16 @@ import com.example.myapplication.ui.test.endTest.endTest
 
 class typingTest : AppCompatActivity(), TypingTestListener,TypingTestListenerSender {
     override fun onStartedSender() {
-        Toast.makeText(this,"Trimitem textul",Toast.LENGTH_LONG).show()
+//        Toast.makeText(this,"Trimitem textul",Toast.LENGTH_SHORT).show()
     }
 
     override fun onSuccessSender(string: String) {
-        Toast.makeText(this,string,Toast.LENGTH_LONG).show()
+        Toast.makeText(this,string,Toast.LENGTH_SHORT).show()
         startActivity(Intent(this,endTest::class.java))
     }
 
     override fun onFailureSender(string: String) {
-        Toast.makeText(this,string,Toast.LENGTH_LONG).show()
+        Toast.makeText(this,string,Toast.LENGTH_SHORT).show()
     }
 
     var viewModel: TypingTestViewModel? = null
@@ -34,7 +34,7 @@ class typingTest : AppCompatActivity(), TypingTestListener,TypingTestListenerSen
     var textTyped: TextView? = null
     var myEditText: EditText? = null
     override fun onStarted() {
-        Toast.makeText(this, "Trying to get the text that needs to be typed!", Toast.LENGTH_LONG).show()
+//        Toast.makeText(this, "Obtinem textul ce trebuie tastat!", Toast.LENGTH_SHORT).show()
     }
 
     override fun onSuccess(string: String, id_text: String) {

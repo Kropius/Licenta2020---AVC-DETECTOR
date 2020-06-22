@@ -3,82 +3,78 @@ import Levenshtein as lv
 from webapi import conn
 from imutils import face_utils
 import numpy as np
-import argparse
 import imutils
 import dlib
 import cv2
 import json
 from webapi.functionalities import create_json_file, write_data
 from webapi.detection.take_decision import builder
-import os
-from webapi import app
-import wavio
 from pydub import AudioSegment
-import os
+import os,re
 
 
 class PreprocessData:
 
-    def convert_mp3_to_wav(self, wav_file):
-        sound = AudioSegment.from_file(wav_file)
-
-        new_path = os.path.dirname(wav_file)
-        print(new_path)
-
-    def get_text_from_wav(self, wav_file):
-        self.convert_mp3_to_wav(wav_file)
-        # sound = AudioSegment.from_mp3(wav_file)
-        # sound.export(wav_file[:-4]+"x"+".wav", format="wav")
-        # wav_file = wav_file[:-4]+"x"+".wav"
-        r = sr.Recognizer()
-        with sr.AudioFile(wav_file) as source:
-            # reads the audio file. Here we use record instead of
-            # listen
-            audio = r.record(source)
-
-        try:
-            text = r.recognize_google(audio)
-            print(f"Recognized Text: {text}")
-            return text
-        except:
-            print("Sorry could not recognize what you said")
 
     def check_slurred_speech(self, wav_text, id_text):
         # aflam ceea ce trebuia sa zica folosind
         # lista = conn.execute("select * from texts").fetchall()
         # print(lista)
         text = conn.execute("select text from texts where id = (?)", (id_text,)).fetchone()[0]
+        print(wav_text, text)
         return self.compare_two_texts(wav_text, text)
 
     def compare_two_texts(self, text_said, original_text):
         # todo maybe upgrade
-        text_said = text_said.split(' ')
-        original_text = original_text.split(' ')
+        reg = re.compile('\w+')
+        text_said=text_said.replace("ă","a")
+        text_said=text_said.replace("î","i")
+        text_said=text_said.replace("ș","s")
+        text_said=text_said.replace("ț","t")
+        text_said=text_said.replace("â","a")
+        original_text=original_text.replace("ă","a")
+        original_text=original_text.replace("î","i")
+        original_text=original_text.replace("ș","s")
+        original_text=original_text.replace("ț","t")
+        original_text=original_text.replace("â","a")
+        text_said = str.lower(text_said)
+        original_text = str.lower(original_text)
+        text_said = reg.findall(text_said)
+
+        original_text = reg.findall(original_text)
         mistakes = 0
 
         i=0
         for i in range(min(len(original_text), len(text_said))):
             if text_said[i] != original_text[i]:
+                print(text_said[i],original_text[i])
                 mistakes += 1
-
+        print(mistakes)
         mistakes+=len(original_text[i+1:])+len(text_said[i+1:])
         return mistakes
 
     def check_similarity(self, original_text_id, input_text):
         text = conn.execute("select text from texts where id = (?)", (original_text_id,)).fetchone()[0]
-        return lv.distance(text, input_text), len("".join(text))
+        reg = re.compile('\w+')
+        text = " ".join(reg.findall(text))
+        input_text = " ".join(reg.findall(input_text))
+        return lv.distance(str.lower(text), str.lower(input_text)), len("".join(text))
 
     def detecting_face_parts(self, image_path):
-        detector = dlib.get_frontal_face_detector()
+        detector = dlib.get_frontal_face_detector()# this should give us the face itself without the background
         predictor = dlib.shape_predictor("webapi/static/detection_files/shape_predictor_68_face_landmarks.dat")
-
+        #clasificatorul built-in
         # load the input image, resize it, and convert it to grayscale
-        print(image_path)
         image = cv2.imread(image_path)
+
         image = imutils.resize(image, width=500)
+
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         # detect faces in the grayscale image
+        #the following line gives us the faces that appear in the photo
         rects = detector(gray, 1)
+        if len(rects) == 0:
+            return "Error"
         # loop over the face detections
         output_coords = []
         for (i, rect) in enumerate(rects):
@@ -114,11 +110,14 @@ class PreprocessData:
                 # cv2.imshow("Image", clone)
                 # cv2.waitKey(0)
 
-            # visualize all facial landmarks with a transparent overlay
+            # for (x, y) in shape:
+            #     cv2.circle(image, (x, y), 1, (0, 0, 255), -1)
+            # cv2.imshow("Output", image)
+            # cv2.waitKey(0)
 
-            cv2.waitKey(0)
             # build_input_from_photo(output_coords)
-        print("face parts", output_coords)
+            # os.remove(image_path)
+            # print(len(output_coords))
         return output_coords
 
     def return_face_parts(self, image_path):
@@ -126,22 +125,12 @@ class PreprocessData:
         :param image_path: All the coordinates from body faces
         :return:
         """
-        print("mata", image_path)
-        # print(self.detecting_face_parts(image_path))
         return self.build_input_from_photo(self.detecting_face_parts(image_path))
 
-    # def return_smile_corners(self, image_path):
-    #     """
-    #     :param output_coords: All the coordinates from body faces
-    #     :return: returning only the corners of the mouth
-    #     """
-    #     full_output = self.build_input_from_photo(self.detecting_face_parts(image_path))
-    #     return {'left_mouth_corner_smiling': full_output['left_mouth_corner'],
-    #             'right_mouth_corner_smiling': full_output['right_mouth_corner'],
-    #             "upper_most_point_smiling": full_output["upper_most_point"],
-    #             "lower_most_point_smiling": full_output["lower_most_point"]}
 
     def build_input_from_photo(self, array_of_coordinates):
+        if type(array_of_coordinates) == str:
+            return "Error"
         array_of_coordinates = {x: y for i in array_of_coordinates for x, y in i.items()}
         output = dict()
         mounth = self.prepare_mouth(array_of_coordinates['mouth'][:12])
@@ -162,16 +151,13 @@ class PreprocessData:
         left_side_down = mouth[9:12]
         left_side = left_side_up + left_side_down
         right_side = right_side_up + right_side_down
-        # mean_left, variance_left = get_mean_variance(left_side)
-        # mean_right, variance_right = get_mean_variance(right_side)
-        # print(left_side, right_side)
         return left_side, right_side
 
     def write_mouth_eyes_data_tojson(self, userdb, path_received_image):
-        # print(userdb.normal_photo.photo_name)
-
         create_json_file(userdb.username + "now")
         now_data = self.return_face_parts(path_received_image)
+        if now_data=="Error":
+            return "Error"
         calculator = builder()
         assymetry_mouth = calculator.get_mouth_asymmetry(now_data['mouth'])
         assymetry_eyes = calculator.get_eyes_asymmetry(now_data['left_eye'], now_data['right_eye'])
@@ -195,20 +181,18 @@ class PreprocessData:
     def write_smiling_data_tojson(self, userdb, path_received_image):
         now_data = self.return_face_parts(path_received_image)
         calculator = builder()
-        distance_corners = calculator.calculate_distance_between_corners(now_data['mouth_corners'])
+        distance_corners = (calculator.calculate_distance_between_corners(now_data['mouth_corners']))/10
         vertical_distance = calculator.calculcate_vertical_distance(now_data['vertical_points'])
         smiling_data = {"distance_corners": distance_corners, "vertical_distance": vertical_distance}
         write_data("smiling_data", smiling_data, userdb.username + "now")
 
         db_data = self.return_face_parts(userdb.smiling_photo.photo_name)
-        distance_corners = calculator.calculate_distance_between_corners(db_data['mouth_corners'])
+        distance_corners = (calculator.calculate_distance_between_corners(db_data['mouth_corners']))/10
         vertical_distance = calculator.calculcate_vertical_distance(db_data['vertical_points'])
         smiling_data = {"distance_corners": distance_corners, "vertical_distance": vertical_distance}
-        write_data("smiling_data", smiling_data, userdb.username + "now")
         write_data("smiling_data", smiling_data, userdb.username + "db")
 
     def write_recording_data(self, userdb, recording_path, id_text):
-        # print(recording_path)
         now_data = self.check_slurred_speech(recording_path, id_text)
         write_data("speech_mistakes", now_data, userdb.username + "now")
         db_data = self.check_slurred_speech(userdb.recording.recording_text, userdb.recording.id_text)

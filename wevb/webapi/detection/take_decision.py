@@ -1,6 +1,6 @@
 import numpy as np
 import json
-
+import os
 
 class builder:
     def __init__(self):
@@ -68,26 +68,34 @@ class builder:
         with open(f"webapi/json_files/{username}now.json")as my_json:
             now_json = json.load(my_json)
         mouth_difference = abs(db_json['normal_photo']['mouth'] - now_json['normal_photo']['mouth'])
-        eyes_difference = abs(db_json['normal_photo']['eyes'] - now_json['normal_photo']['eyes'])
-        return mouth_difference + eyes_difference
+        eyes_difference = abs((db_json['normal_photo']['eyes'] - now_json['normal_photo']['eyes']))
+        if mouth_difference < 2:
+            if db_json['normal_photo']['eyes'] < now_json['normal_photo']['eyes']:
+                return mouth_difference + (eyes_difference/3)
+            else:
+                return mouth_difference + (eyes_difference / 2)
+        elif mouth_difference > 2.5:
+            return mouth_difference+(eyes_difference/2)
+        else:
+            return mouth_difference
 
     def detect_smiling_abnormalities(self, username):
         with open(f"webapi/json_files/{username}db.json")as my_json:
             db_json = json.load(my_json)
         with open(f"webapi/json_files/{username}now.json")as my_json:
             now_json = json.load(my_json)
-        corner_difference = abs(
-            db_json['smiling_data']['distance_corners'] - now_json['smiling_data']['distance_corners'])
-        vertical_difference = abs(
-            db_json['smiling_data']['vertical_distance'] - now_json['smiling_data']['vertical_distance'])
-        return corner_difference + vertical_difference
+        corner_difference = db_json['smiling_data']['distance_corners'] - now_json['smiling_data']['distance_corners']
+        vertical_difference =db_json['smiling_data']['vertical_distance'] - now_json['smiling_data']['vertical_distance']
+        # print(corner_difference+vertical_difference)
+        return corner_difference
+               # + vertical_difference
 
     def detect_speech_abnormalities(self, username):
         with open(f"webapi/json_files/{username}db.json")as my_json:
             db_json = json.load(my_json)
         with open(f"webapi/json_files/{username}now.json")as my_json:
             now_json = json.load(my_json)
-        total_mistakes = abs(db_json['speech_mistakes'] - now_json['speech_mistakes'])
+        total_mistakes = now_json['speech_mistakes']-db_json['speech_mistakes']
         return total_mistakes
 
     def detect_typing_abnormalities(self, username):
@@ -100,8 +108,22 @@ class builder:
         return total_mistakes
 
     def caculate_total_score(self, username):
-        score = self.detect_typing_abnormalities(username) + self.detect_speech_abnormalities(
-            username) + self.detect_smiling_abnormalities(username) +\
-        self.detect_moutheyes_abnormalities(username)
+        score_typing_abnormalities = self.detect_typing_abnormalities(username)
+        score_speech_abnormalities = self.detect_speech_abnormalities(username)
+        score_mouth_eyes_abnormalities = self.detect_moutheyes_abnormalities(username)
+        score_smiling_abnormalities = self.detect_smiling_abnormalities(username)
+
+        score = score_mouth_eyes_abnormalities+score_smiling_abnormalities+score_speech_abnormalities+score_typing_abnormalities
+        if score_speech_abnormalities>2:
+            score+=7
+        if score_typing_abnormalities>0.5:
+            score+=7
+        if score_mouth_eyes_abnormalities>4.3:
+            score+=7
+        if score_smiling_abnormalities>1:
+            score+=7
+        score+=10
+        os.remove(f"webapi/json_files/{username}db.json")
+        os.remove(f"webapi/json_files/{username}now.json")
         return score
 

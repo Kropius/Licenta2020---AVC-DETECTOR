@@ -33,25 +33,25 @@ import java.io.IOException
 
 class voiceTest : AppCompatActivity(), VoiceTestListener, VoiceTestSender {
     override fun onStartedSending(string: String) {
-        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
+//        Toast.makeText(this, string, Toast.LENGTH_SHORT).show()
     }
 
     override fun onSuccessSending(string: String) {
-        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, string, Toast.LENGTH_SHORT).show()
         startActivity(Intent(this,typingTest::class.java))
     }
 
     override fun onFailureSending(string: String) {
-        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, string, Toast.LENGTH_SHORT).show()
     }
 
 
     override fun onFailure(string: String) {
-        Toast.makeText(this, string, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, string, Toast.LENGTH_SHORT).show()
     }
 
     override fun onStarted() {
-        Toast.makeText(this, "Getting the text!", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "Obtinem textul ce trebuie recitat!", Toast.LENGTH_SHORT).show()
     }
 
     override fun onSuccess(string: String,id_text:String) {
@@ -113,7 +113,7 @@ class voiceTest : AppCompatActivity(), VoiceTestListener, VoiceTestSender {
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, "voice.recognition.test")
 
         intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 5)
-        intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS,300)
+//        intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS,300)
         sr!!.startListening(intent)
 
     }

@@ -39,23 +39,23 @@ class VoiceTestViewModel(application: Application) : AndroidViewModel(applicatio
                 voiceListener!!.onSuccess(text!!, textId.toString())
 
             } else {
-                voiceListener!!.onFailure("Failure, try again!")
+                voiceListener!!.onFailure("Eroare, mai incearca!")
             }
         }
     }
 
     public fun sendRecording(view: View) {
-        voiceListenerSender!!.onStartedSending("Starting to send the registration!")
+        voiceListenerSender!!.onStartedSending("Trimitem inregistrarea!")
         if (text.isNullOrEmpty() || textId == null) {
-            voiceListenerSender!!.onFailureSending("Text is empty. Please refresh the text!")
+            voiceListenerSender!!.onFailureSending("Textul este gol! Te rog, apasa pe REIMPROSPATEAZA TEXT!")
             return
         }
         if (recordingText.isNullOrEmpty()) {
-            voiceListenerSender!!.onFailureSending("Record the text, and then send it")
+            voiceListenerSender!!.onFailureSending("Inregistreaza-te, si apoi trimite!")
             return
         }
         if(textRecordingFlag == false){
-            voiceListenerSender!!.onFailureSending("Please give us a proper recording!")
+            voiceListenerSender!!.onFailureSending("Te rog, ofera o inregistrare corecta!")
             return
         }
         Coroutines.main {

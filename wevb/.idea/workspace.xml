@@ -2,12 +2,113 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb62000-da61-4e8c-8fb1-524403c22849" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/data/ds.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/data/network/MyApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/data/network/MyApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/Login.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/Login.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/LoginViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/LoginViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/Register.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/Register.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/RegisterViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/auth/RegisterViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/endTest/EndTestViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/endTest/EndTestViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/endTest/endTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/endTest/endTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/normalphoto/normalPhoto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/normalphoto/normalPhoto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/smilingphoto/smilingPhoto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/smilingphoto/smilingPhoto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/typingTest/typingTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/typingTest/typingTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/voiceTest/VoiceTestViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/voiceTest/VoiceTestViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/voiceTest/voiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/myapplication/ui/test/voiceTest/voiceTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_register.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapi/json_files/Kropiusnow.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/json_files/Kropiusnow.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trying.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/IMG_20200323_191756.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/IMG_20200330_200909.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_120226_8475745591092235299.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_120425_5487256536443335748.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_120627_5716261698262296308.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_120641_3783294839432021715.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_123131_714947289171364715.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_131923_800137142351815149.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_132317_1868431567782735232.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_132620_5106237621126714146.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_144131_1712089955106821672.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_144635_4893018818540734624.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_144821_763774206391187839.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_144920_3517098339970642622.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_145131_4559712570029012902.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_210832_9038531085981815411.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200324_110101_1350028011241818695.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200325_124740_6055050100342723956.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200325_152807_618756767827256177.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200328_143854_5878351761270714838.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_160537_155158177341062674.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_160608_8337623214322194111.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_160653_1951995805673346548.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_161421_7208070443596035673.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_161455_3366292680120500479.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_162034_6480333467468215276.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_162121_6784347545064825060.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_162139_4022050617497208241.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_164232_526442779663701324.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_164303_2153759632890302349.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_180602_6954356848766571327.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_180644_4534629515019905837.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_183022_8600242729107142281.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_183049_6227749059177827624.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200331_161021_4340586261402325014.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200331_161042_4301046997235072360.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200401_204840_8554733953601706564.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200401_204932_6386796761666528398.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200410_223933_1574345297718004482.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200413_163214_5280423732971024976.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200417_215423_4639500394058491984.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200507_115749_3105095238942711362.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200507_150348_3601061510959517622.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_RECORDINGS/Recording (3) (1).wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_RECORDINGS/audiorecordtestx.3gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_RECORDINGS/audiorecordtestx.amr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/UPLOAD_FOLDER_RECORDINGS/audiorecordtestxx.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/app.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/detection/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/detection/preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/detection/take_decision.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/detection/take_decision.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/json_files/Cipriandb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/json_files/Cipriannow.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/json_files/Kropiusdb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/json_files/Kropiusnow.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/json_files/Kropiussdb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/json_files/Kropiussnow.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapi/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapi/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/webapi/site.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/228dd3118d602036.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/242d02c324aeac88.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/294e00c15dc06e06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/2e7417c35154b7e6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/3e50712280fc7db5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/69aec06c6c83fc7b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/702ba1f3c94d4e16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/b58d34a5e462cc70.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/c0a7b1a88ba4f463.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/c89bffb336150966.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/e786654bf26142ee.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/eaa27124d4caef8d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_normal_photos/f22302b31c9cccb5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/1dfc94f1dd9fb202.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/234d0a8eebd25ad5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/50ae99567c6cceb7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/676548de4864d2f8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/6ddef03cca685cca.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/8cbf2e56c76202f4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/8f05394966898986.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/9fed9a3f2ed1dd5e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/a40421a4e359c692.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/a65c9f12187c93cc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/c6fbc7a164bc859f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/d7b332a7e3929585.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/base_smiling_photos/df659d85ec519fe0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/normal_recordings/56d170888155b2ca.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapi/static/normal_recordings/87ef8577313c6e30.wav" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,11 +118,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapi/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2025">
-              <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+            <state relative-caret-position="6325">
+              <caret line="265" column="28" selection-start-line="265" selection-start-column="28" selection-end-line="265" selection-end-column="28" />
               <folding>
                 <element signature="e#0#84#0" expanded="true" />
               </folding>
@@ -29,38 +130,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/__init__.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/script.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="250">
+              <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/a40421a4e359c692.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/6ddef03cca685cca.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/702ba1f3c94d4e16.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapi/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1650">
-              <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+            <state relative-caret-position="1207">
+              <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -69,23 +152,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_160608_8337623214322194111.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_123131_714947289171364715.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/IMG_20200323_191756.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_120226_8475745591092235299.jpg">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/webapi/detection/take_decision.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2450">
+              <caret line="100" column="8" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -120,23 +195,40 @@
         <option value="$PROJECT_DIR$/webapi/json_files/Kropius.json" />
         <option value="$PROJECT_DIR$/webapi/detection/another_take_decision.py" />
         <option value="$PROJECT_DIR$/webapi/functionalities.py" />
-        <option value="$PROJECT_DIR$/webapi/detection/take_decision.py" />
         <option value="$PROJECT_DIR$/ceva.py" />
         <option value="$PROJECT_DIR$/webapi/config.py" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/trying.py" />
+        <option value="$PROJECT_DIR$/webapi/json_files/Cipriandb.json" />
         <option value="$PROJECT_DIR$/webapi/models.py" />
         <option value="$PROJECT_DIR$/webapi/json_files/Kropiusdb.json" />
+        <option value="$PROJECT_DIR$/webapi/json_files/Kropiussdb.json" />
+        <option value="$PROJECT_DIR$/webapi/app.db" />
+        <option value="$PROJECT_DIR$/texts.txt" />
+        <option value="$PROJECT_DIR$/db_script.py" />
         <option value="$PROJECT_DIR$/webapi/json_files/Kropiusnow.json" />
+        <option value="$PROJECT_DIR$/webapi/json_files/mihneaidb.json" />
+        <option value="$PROJECT_DIR$/webapi/json_files/mihnea2now.json" />
+        <option value="$PROJECT_DIR$/webapi/json_files/mihnea2db.json" />
+        <option value="$PROJECT_DIR$/webapi/json_files/ovidiudb.json" />
+        <option value="$PROJECT_DIR$/webapi/json_files/ovidiunow.json" />
+        <option value="$PROJECT_DIR$/webapi/json_files/cipriandb.json" />
+        <option value="$PROJECT_DIR$/webapi/json_files/cipriannow.json" />
         <option value="$PROJECT_DIR$/webapi/detection/preprocessing.py" />
+        <option value="$PROJECT_DIR$/webapi/json_files/mihneainow.json" />
+        <option value="$PROJECT_DIR$/webapi/json_files/mihneaioannow.json" />
+        <option value="$PROJECT_DIR$/webapi/json_files/mihneaioandb.json" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/webapi/detection/take_decision.py" />
         <option value="$PROJECT_DIR$/webapi/routes.py" />
+        <option value="$PROJECT_DIR$/script.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -188,53 +280,7 @@
               <item name="wevb" type="b2602c69:ProjectViewProjectNode" />
               <item name="wevb" type="462c0819:PsiDirectoryNode" />
               <item name="webapi" type="462c0819:PsiDirectoryNode" />
-              <item name="json_files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wevb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wevb" type="462c0819:PsiDirectoryNode" />
-              <item name="webapi" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wevb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wevb" type="462c0819:PsiDirectoryNode" />
-              <item name="webapi" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="base_normal_photos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wevb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wevb" type="462c0819:PsiDirectoryNode" />
-              <item name="webapi" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="base_smiling_photos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wevb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wevb" type="462c0819:PsiDirectoryNode" />
-              <item name="webapi" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="detection_files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wevb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wevb" type="462c0819:PsiDirectoryNode" />
-              <item name="webapi" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="normal_recordings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wevb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wevb" type="462c0819:PsiDirectoryNode" />
-              <item name="webapi" type="462c0819:PsiDirectoryNode" />
-              <item name="UPLOAD_FOLDER_PHOTOS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wevb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wevb" type="462c0819:PsiDirectoryNode" />
-              <item name="webapi" type="462c0819:PsiDirectoryNode" />
-              <item name="UPLOAD_FOLDER_RECORDINGS" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -245,20 +291,20 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../RcaViewerFlask" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\info\LICENTA2020\wevb\webapi" />
-      <recent name="E:\info\LICENTA2020\wevb" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\info\LICENTA2020\wevb\webapi\detection" />
       <recent name="E:\info\LICENTA2020\wevb\webapi\static\detection_files" />
       <recent name="E:\info\LICENTA2020\wevb\webapi" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\info\LICENTA2020\wevb\webapi" />
+      <recent name="E:\info\LICENTA2020\wevb" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -273,7 +319,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Python.script">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="wevb" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -296,27 +342,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="build_db" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="wevb" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/webapi" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/webapi/build_db.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="ceva" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="wevb" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -330,6 +355,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ceva.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="db_script" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="wevb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db_script.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="script" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="wevb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/script.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -361,10 +428,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.script" />
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.db_script" />
         <item itemvalue="Python.trying" />
         <item itemvalue="Python.ceva" />
-        <item itemvalue="Python.build_db" />
       </list>
     </recent_temporary>
   </component>
@@ -398,9 +466,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27976817" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27818757" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -430,97 +499,40 @@
     <SUITE FILE_PATH="coverage/wevb$app.coverage" NAME="app Coverage Results" MODIFIED="1582178873257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/imutils/convenience.py">
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/kropiusdb.json" />
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/3f24eedce5be3a45.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/4aca74e9d49980c5.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/7ef1c59dc6dd95f0.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/078038e737ee8df4.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/5273c4ab94e7c4b4.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/950c105501f589b4.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200616_235957_2914273467473157856.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        <state>
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/close-up-portrait-of-mature-woman-with-wide-smile-X9C34C.jpg" />
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200322_220644_1651151373200301603.jpg" />
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200322_220505_5887928476443365970.jpg" />
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/flask_jwt_extended/utils.py">
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/pydub/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+        <state relative-caret-position="505">
+          <caret line="164" selection-start-line="164" selection-end-line="164" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/flask_jwt_extended/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7525">
-          <caret line="303" column="8" selection-start-line="303" selection-start-column="8" selection-end-line="303" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/flask_jwt_extended/view_decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="94" column="4" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-872844455/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74600">
-          <caret line="2984" column="8" selection-start-line="2984" selection-start-column="8" selection-end-line="2984" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_115025_6639446924151826968.jpg" />
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_113421_9054913741369942342.jpg" />
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_115211_3153472972634968814.jpg" />
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_115445_4281114606204038305.jpg" />
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_115736_5486082620554508392.jpg" />
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_132620_5106237621126714146.jpg">
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200617_115240_825690080076521115.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/a44193256075f379.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_144131_1712089955106821672.jpg">
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/fae7e9cda6c19c15.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_120641_3783294839432021715.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_144821_763774206391187839.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_145131_4559712570029012902.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200324_110101_1350028011241818695.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_131923_800137142351815149.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trying.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/site.db">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/webapi/functionalities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="25">
           <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
@@ -528,140 +540,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/mihnea2now.json" />
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/ovidiudb.json" />
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/ovidiunow.json" />
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/mihneaidb.json" />
     <entry file="file://$PROJECT_DIR$/webapi/app.db">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/detection/take_decision.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropiusnow.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="317" selection-start-column="317" selection-end-column="317" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/234d0a8eebd25ad5.jpg">
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/kropiusnow.json" />
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/mihnea2db.json" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200617_192045_2277880710255751043.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200617_191956_1948145336811956674.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200617_192017_4975094635300596522.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200617_191122_7211665563516199415.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200617_190343_8858903789289811007.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200617_191034_671208659082731065.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/f65f7e16d50d81c7.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/9fed9a3f2ed1dd5e.jpg">
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/6d2cf60ee4bf683c.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/8cbf2e56c76202f4.jpg">
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/38d20edba3724620.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/json_files/Kropiusdb.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="318" selection-start-column="318" selection-end-column="318" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/59dd738a6431dde3.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/pydub/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6325">
-          <caret line="262" selection-start-line="262" selection-end-line="262" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/65b5877a518c56f4.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/pydub/audio_segment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16300">
-          <caret line="664" selection-start-line="664" selection-end-line="664" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/webapi/site.db">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/Lib/subprocess.py">
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/cipriannow.json" />
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/cipriandb.json" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200617_174248_5008011857103359303.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200618_183228_6580621070773609440.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200618_183126_3937035640554699741.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200618_190621_4969477741228851519.jpg" />
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="774" selection-start-line="774" selection-end-line="774" />
+        <state relative-caret-position="75">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapi/detection/preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="67" column="70" lean-forward="true" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
+        <state relative-caret-position="4200">
+          <caret line="180" column="8" selection-start-line="180" selection-start-column="8" selection-end-line="180" selection-end-column="8" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200507_150348_3601061510959517622.jpg">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200618_191113_8686063011293875659.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200618_202647_257571971172927462.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200618_182726_7020971084874146634.jpg" />
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/mihneainow.json" />
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/mihneaioandb.json" />
+    <entry file="file://$PROJECT_DIR$/webapi/json_files/mihneaioannow.json" />
+    <entry file="file://$PROJECT_DIR$/webapi/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6325">
+          <caret line="265" column="28" selection-start-line="265" selection-start-column="28" selection-end-line="265" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200507_115749_3105095238942711362.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200413_163214_5280423732971024976.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200331_161021_4340586261402325014.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/676548de4864d2f8.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/a40421a4e359c692.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_smiling_photos/6ddef03cca685cca.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/static/base_normal_photos/702ba1f3c94d4e16.jpg">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/webapi/detection/take_decision.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2450">
+          <caret line="100" column="8" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapi/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+        <state relative-caret-position="1207">
+          <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200330_160608_8337623214322194111.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_123131_714947289171364715.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/IMG_20200323_191756.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/UPLOAD_FOLDER_PHOTOS/JPEG_20200323_120226_8475745591092235299.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/__init__.py">
+    <entry file="file://$PROJECT_DIR$/script.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapi/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2025">
-          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#84#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="250">
+          <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
         </state>
       </provider>
     </entry>

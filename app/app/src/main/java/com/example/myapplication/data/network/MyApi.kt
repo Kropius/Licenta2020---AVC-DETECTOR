@@ -83,7 +83,10 @@ interface MyApi {
                     .readTimeout(60, TimeUnit.SECONDS)
                     .writeTimeout(60, TimeUnit.SECONDS)
                     .build()
-            return Retrofit.Builder().baseUrl("http://10.0.2.2:5000/")
+//            return Retrofit.Builder().baseUrl("http://10.0.2.2:5000/")
+
+            return Retrofit.Builder().baseUrl("http://192.168.0.192:80/")
+//            return Retrofit.Builder().baseUrl("http://89.137.190.204:80/")
 
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(okHttpClient)

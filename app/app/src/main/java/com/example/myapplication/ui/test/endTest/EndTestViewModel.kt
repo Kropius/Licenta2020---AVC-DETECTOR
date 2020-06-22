@@ -1,6 +1,7 @@
 package com.example.myapplication.ui.test.endTest
 
 import android.app.Application
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import com.example.myapplication.R
@@ -21,8 +22,9 @@ class EndTestViewModel(application:Application):AndroidViewModel(application) {
     public fun printResults(){
         Coroutines.main{
             val response: Response<endTestResponse> = EndTestRepository().endTestRepository(getTokens(getApplication()),getApplication())
+            Log.i("Info","misto"+response.body()!!.response)
             if(response.isSuccessful){
-                if(response.body()!!.response == "You are ok! Calm down"){
+                if(response.body()!!.response == "Esti ok! Calmeaza-te!"){
                     verdictTitle = context.resources.getString(R.string.end_test_good)
                     verdictSubTytle = context.resources.getString(R.string.end_test_verdict_good)
                     verdictTips = context.resources.getString(R.string.advice_good)
@@ -40,7 +42,7 @@ class EndTestViewModel(application:Application):AndroidViewModel(application) {
 
             }
             else{
-                Toast.makeText(context,"matancurs",Toast.LENGTH_LONG).show()
+//                Toast.makeText(context,"matancurs",Toast.LENGTH_LONG).show()
 
             }
         }

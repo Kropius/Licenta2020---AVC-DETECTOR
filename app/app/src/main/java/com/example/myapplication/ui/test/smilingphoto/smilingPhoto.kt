@@ -36,7 +36,7 @@ class smilingPhoto : AppCompatActivity(),SmilingPhotoListener {
 
     override fun onSuccess(response: String?) {
         progress_bar.hide()
-        Toast.makeText(this, response.toString(), Toast.LENGTH_LONG).show()
+        Toast.makeText(this, response.toString(), Toast.LENGTH_SHORT).show()
        startActivity(Intent(this,voiceTest::class.java))
     }
 

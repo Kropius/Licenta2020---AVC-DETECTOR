@@ -65,7 +65,7 @@ class TypingTest(db.Model):
 
 
 class RecordingTest(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column  (db.Integer, primary_key=True)
     recording_text = db.Column(db.String(220), nullable=False)
     id_text = db.Column(db.Integer, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), unique=True)

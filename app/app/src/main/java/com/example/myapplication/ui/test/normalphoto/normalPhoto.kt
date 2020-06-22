@@ -243,7 +243,9 @@ class normalPhoto : AppCompatActivity(), NormalPhotoListener {
     override fun onSuccess(response: String?) {
         progress_bar.hide()
         Toast.makeText(this, response.toString(), Toast.LENGTH_LONG).show()
+        if(!(response!!.equals("Imposibil de procesat imaginea"))){
         startActivity(Intent(this, smilingPhoto::class.java))
+        }
     }
 
     override fun onFailure(message: String) {

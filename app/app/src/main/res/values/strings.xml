@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">AVC-DETECTOR</string>
     <string name="register">Inregistrare</string>
     <string name="login">Conectare</string>
     <string name="logo">Be Your Own Hero!</string>
@@ -68,7 +68,7 @@
     <string name="call_a_friend">Suna un prieten!</string>
 
     <string name="end_test_verdict_good">Este foarte probabil ca tu sa nu ai un AVC</string>
-    <string name="end_test_verdict_bad">Este foarte putin probabil ca tu sa ai un AVC</string>
+    <string name="end_test_verdict_bad">Este foarte probabil ca tu sa ai un AVC</string>
 
     <string name="end_test_good">Esti bine!</string>
     <string name="end_test_bad">Ceva nu este in regula!</string>
